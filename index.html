@@ -330,7 +330,7 @@
         color: #777;
       }
       
-      .contact-info {
+      /* .contact-info {
         background-color: var(--light-gray);
         padding: 15px 20px;
         border-radius: 6px;
@@ -347,7 +347,39 @@
       .contact-info i {
         color: var(--secondary-color);
         width: 20px;
-      }
+      } */
+      .contact-info {
+  background-color: var(--light-gray);
+  /* 1. 减少内边距：上下从15px减到8px，左右从20px减到12px */
+  padding: 8px 12px;
+  border-radius: 6px;
+  /* 2. 减少上方间距 */
+  margin-top: 10px;
+  /* 3. 关键：让宽度自适应内容，而不是占满整行 */
+  width: fit-content; 
+}
+
+.contact-info p {
+  /* 4. 减少每行文字之间的下间距 */
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* 稍微缩小图标和文字的间距 */
+  font-size: 0.95em; /* 可选：稍微缩小字号使整体更紧凑 */
+}
+
+/* 5. 去除最后一行多余的下边距，进一步压低高度 */
+.contact-info p:last-child {
+  margin-bottom: 0;
+}
+
+.contact-info i {
+  color: var(--secondary-color);
+  /* 6. 稍微缩小图标占位宽度 */
+  width: 18px;
+  text-align: center;
+}
+
       
       .footnote {
         font-size: 0.9rem;
