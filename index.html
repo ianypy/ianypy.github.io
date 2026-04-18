@@ -959,7 +959,7 @@
      <div class="container">
       <div class="visitor-map-wrapper">
         <h2 class="visitor-map-title">Statistics</h2>
-        <p>
+        <!-- <p>
          <span id="busuanzi_container_site_uv">
             👥 Visitors: <strong id="busuanzi_value_site_uv">--</strong>
           </span>
@@ -967,7 +967,68 @@
         <span id="busuanzi_container_site_pv">
           👁️ Page Views: <strong id="busuanzi_value_site_pv">--</strong>
         </span>
-        </p>
+        </p> -->
+        <p>
+  <!-- 不蒜子：统计总 UV 和总 PV -->
+  <span id="busuanzi_container_site_uv">
+    👥 总访客: <strong id="busuanzi_value_site_uv">--</strong>
+  </span>
+  &nbsp;|&nbsp;
+  <span id="busuanzi_container_site_pv">
+    👁️ 总访问: <strong id="busuanzi_value_site_pv">--</strong>
+  </span>
+
+  <br> <!-- 换行，保持整齐 -->
+
+  <!-- 51.la：统计今日、昨日、在线 -->
+  <span>
+    📅 今日: <strong id="la_today_pv">--</strong>
+  </span>
+  &nbsp;|&nbsp;
+  <span>
+    ⌛ 昨日: <strong id="la_yesterday_pv">--</strong>
+  </span>
+  &nbsp;|&nbsp;
+  <span>
+    🟢 在线: <strong id="la_online_pv">--</strong>
+  </span>
+</p>
+
+<!-- 隐藏官方挂件本身的显示，我们只要它的数据 -->
+<div style="display:none">
+  <script id="LA-DATA-WIDGET" crossorigin="anonymous" charset="UTF-8" src="https://v6-widget.51.la/v6/3PfG0w48WMF7LJHN/quote.js?theme=0&col=true&f=12&display=0,0,1,1,1,1,1,1"></script>
+</div>
+<script>
+  // 等待 51.la 的挂件脚本加载并执行
+  var checkLaData = setInterval(function() {
+    // 官方挂件会生成一些特定的元素，我们从中提取数字
+    // 51.la 挂件渲染后，数据通常在 id 为 LA-DATA-WIDGET 的相邻元素中
+    try {
+      var widgetContainer = document.getElementById('LA-DATA-WIDGET').parentNode;
+      if (widgetContainer) {
+        // 尝试通过 fetch 直接获取纯净数据（更可靠的方法）
+        fetch('https://v6-widget.51.la/v6/3PfG0w48WMF7LJHN/quote.js')
+          .then(res => res.text())
+          .then(text => {
+            // 正则解析：今日PV, 昨日PV, 在线人数
+            // 51.la quote.js 内部数据的顺序通常是固定的
+            var matches = text.match(/\d+/g);
+            if (matches && matches.length >= 7) {
+              document.getElementById('la_today_pv').innerText = matches[1];     // 今日PV
+              document.getElementById('la_yesterday_pv').innerText = matches[3]; // 昨日PV
+              document.getElementById('la_online_pv').innerText = matches[6];    // 在线人数
+              clearInterval(checkLaData); // 成功获取后停止定时器
+            }
+          });
+      }
+    } catch (e) {
+      console.error("51.la 数据解析失败");
+    }
+  }, 1000); // 每秒检查一次，直到数据加载出来
+</script>
+
+
+        
         <div class="visitor-map-content">
           <span style="display:inline-block; width:600px; height:320px; max-width: 100%; overflow:hidden; vertical-align:middle;">
           <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=PKu-j1ruGcY5Ih8QMbX77_4usfTRncuS7rUZkrqTOms&cl=ffffff&w=a"></script>
