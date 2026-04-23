@@ -913,17 +913,17 @@
         <div id="tab-all" class="tab-content">
           <!-- 样例论文 1 -->
           
-           <li class="patent-item">
-                <span class="patent-number">CN112163560B</span> |
+           <li class="allpaper-item">
+                <span class="allpaper-number">CN112163560B</span> |
                 <a
                   href="https://patents.google.com/patent/CN112163560A/zh"
-                  class="patent-title"
+                  class="allpaper-title"
                   target="_blank"
                   style="font-weight: bold"
                   >一种视频信息处理方法、装置、电子设备及存储介质</a
                 >
                 |
-                <span class="patent-meta"> 2024-03-05 | ZL202011141537.1 </span>
+                <span class="allpaper-meta"> 2024-03-05 | ZL202011141537.1 </span>
               </li>
 
          
@@ -1387,20 +1387,20 @@
                 👁️ Page Views: <strong id="busuanzi_value_site_pv">--</strong>
               </span>
 
-              <br />
+              <!-- <br /> -->
               <!-- 换行，保持整齐 -->
 
               <!-- 51.la：统计今日、昨日、在线 -->
-              <span> 📅 Today: <strong id="la_today_pv">--</strong> </span>
+              <!-- <span> 📅 Today: <strong id="la_today_pv">--</strong> </span>
               &nbsp;|&nbsp;
               <span>
                 ⌛ Yesterday: <strong id="la_yesterday_pv">--</strong>
               </span>
               &nbsp;|&nbsp;
-              <span> 🟢 Online: <strong id="la_online_pv">--</strong> </span>
+              <span> 🟢 Online: <strong id="la_online_pv">--</strong> </span> -->
             </p>
 
-            <!-- 隐藏官方挂件本身的显示，我们只要它的数据 -->
+            <!-- <!-- 隐藏官方挂件本身的显示，我们只要它的数据 -->
             <div style="display: none">
               <script
                 id="LA-DATA-WIDGET"
@@ -1408,7 +1408,7 @@
                 charset="UTF-8"
                 src="https://v6-widget.51.la/v6/3PfG0w48WMF7LJHN/quote.js?theme=0&col=true&f=12&display=0,0,1,1,1,1,1,1"
               ></script>
-            </div>
+            </div> -->
             <script>
               // Tab 切换功能
               function switchTab(tabName) {
@@ -1427,38 +1427,38 @@
                   .classList.add("active");
               }
 
-              // 等待 51.la 的挂件脚本加载并执行
-              var checkLaData = setInterval(function () {
-                // 官方挂件会生成一些特定的元素，我们从中提取数字
-                // 51.la 挂件渲染后，数据通常在 id 为 LA-DATA-WIDGET 的相邻元素中
-                try {
-                  var widgetContainer =
-                    document.getElementById("LA-DATA-WIDGET").parentNode;
-                  if (widgetContainer) {
-                    // 尝试通过 fetch 直接获取纯净数据（更可靠的方法）
-                    fetch(
-                      "https://v6-widget.51.la/v6/3PfG0w48WMF7LJHN/quote.js",
-                    )
-                      .then((res) => res.text())
-                      .then((text) => {
-                        // 正则解析：今日PV, 昨日PV, 在线人数
-                        // 51.la quote.js 内部数据的顺序通常是固定的
-                        var matches = text.match(/\d+/g);
-                        if (matches && matches.length >= 7) {
-                          document.getElementById("la_today_pv").innerText =
-                            matches[1]; // 今日PV
-                          document.getElementById("la_yesterday_pv").innerText =
-                            matches[3]; // 昨日PV
-                          document.getElementById("la_online_pv").innerText =
-                            matches[6]; // 在线人数
-                          clearInterval(checkLaData); // 成功获取后停止定时器
-                        }
-                      });
-                  }
-                } catch (e) {
-                  console.error("51.la 数据解析失败");
-                }
-              }, 1000); // 每秒检查一次，直到数据加载出来
+              // // 等待 51.la 的挂件脚本加载并执行
+              // var checkLaData = setInterval(function () {
+              //   // 官方挂件会生成一些特定的元素，我们从中提取数字
+              //   // 51.la 挂件渲染后，数据通常在 id 为 LA-DATA-WIDGET 的相邻元素中
+              //   try {
+              //     var widgetContainer =
+              //       document.getElementById("LA-DATA-WIDGET").parentNode;
+              //     if (widgetContainer) {
+              //       // 尝试通过 fetch 直接获取纯净数据（更可靠的方法）
+              //       fetch(
+              //         "https://v6-widget.51.la/v6/3PfG0w48WMF7LJHN/quote.js",
+              //       )
+              //         .then((res) => res.text())
+              //         .then((text) => {
+              //           // 正则解析：今日PV, 昨日PV, 在线人数
+              //           // 51.la quote.js 内部数据的顺序通常是固定的
+              //           var matches = text.match(/\d+/g);
+              //           if (matches && matches.length >= 7) {
+              //             document.getElementById("la_today_pv").innerText =
+              //               matches[1]; // 今日PV
+              //             document.getElementById("la_yesterday_pv").innerText =
+              //               matches[3]; // 昨日PV
+              //             document.getElementById("la_online_pv").innerText =
+              //               matches[6]; // 在线人数
+              //             clearInterval(checkLaData); // 成功获取后停止定时器
+              //           }
+              //         });
+              //     }
+              //   } catch (e) {
+              //     console.error("51.la 数据解析失败");
+              //   }
+              // }, 1000); // 每秒检查一次，直到数据加载出来
             </script>
 
             <div class="visitor-map-content">
