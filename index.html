@@ -1,441 +1,484 @@
-<!DOCTYPE HTML>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Yipeng Yu (俞一鹏)</title>
-    <meta name="author" content="Yipeng Yu">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="images/robot.ico" type="image/x-icon">
+    <meta name="author" content="Yipeng Yu" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="images/robot.ico" type="image/x-icon" />
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Open+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-      :root {
-        --primary-color: #122F51;
-        --secondary-color: #3e6990;
-        --accent-color: #1e88e5;
-        --background-color: #ffffff;
-        --text-color: #333333;
-        --light-gray: #f5f5f5;
-        --border-color: #e0e0e0;
-      }
-      
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-      
-      body {
-        font-family: 'Open Sans', sans-serif;
-        line-height: 1.6;
-        color: var(--text-color);
-        background-color: var(--background-color);
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 20px;
-      }
-      
-      .container {
-        width: 100%;
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 30px 20px;
-        background-color: var(--background-color);
-        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
-        border-radius: 8px;
-      }
-      
-      /* Navigation Bar Styles */
-      nav {
-        width: 100%;
-        background-color: var(--primary-color);
-        padding: 12px 0;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        margin-bottom: 20px;
-        border-radius: 8px;
-      }
-      
-      .nav-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-      
-      .logo {
-        font-family: 'Lora', serif;
-        font-size: 1.4rem;
-        font-weight: 600;
-        color: white;
-        text-decoration: none;
-      }
-      
-      .nav-links {
-        display: flex;
-        gap: 30px;
-      }
-      
-      .nav-links a {
-        color: white;
-        text-decoration: none;
-        font-weight: 500;
-        transition: all 0.3s ease;
-        padding: 5px 10px;
-        border-radius: 4px;
-      }
-      
-      .nav-links a:hover {
-        background-color: rgba(255, 255, 255, 0.2);
-        text-decoration: none;
-      }
-      
-      .mobile-menu-btn {
-        display: none;
-        color: white;
-        font-size: 1.5rem;
-        background: none;
-        border: none;
-        cursor: pointer;
-      }
-      
-      header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 40px;
-        position: relative;
-        padding-bottom: 30px;
-      }
-      
-      .header-content {
-        display: flex;
-        width: 100%;
-        gap: 40px;
-        align-items: center;
-        margin-top: 20px;
-      }
-      
-      .profile-image {
-        width: 230px;
-        height: 230px;
-        border-radius: 8px;
-        object-fit: cover;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-      }
-      
-      .profile-image:hover {
-        transform: scale(1.02);
-      }
-      
-      .bio {
-        flex: 1;
-      }
-      
-      h1 {
-        font-family: 'Lora', serif;
-        font-size: 2.4rem;
-        font-weight: 600;
-        color: var(--primary-color);
-        margin-bottom: 20px;
-        letter-spacing: 0.5px;
-        border-bottom: 2px solid var(--accent-color);
-        padding-bottom: 10px;
-        display: inline-block;
-      }
-      
-      h2 {
-        font-family: 'Lora', serif;
-        font-size: 1.8rem;
-        color: var(--primary-color);
-        margin: 30px 0 20px 0;
-        padding-bottom: 8px;
-        border-bottom: 1px solid var(--border-color);
-      }
-      
-      p {
-        margin-bottom: 15px;
-        line-height: 1.7;
-        color: #444;
-      }
-      
-      a {
-        color: var(--accent-color);
-        text-decoration: none;
-        transition: color 0.2s;
-      }
-      
-      a:hover {
-        color: var(--secondary-color);
-        text-decoration: underline;
-      }
-      
-      .social-links {
-        display: flex;
-        gap: 20px;
-        margin: 15px 0;
-      }
-      
-      .social-links a {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        padding: 6px 15px;
-        background-color: var(--light-gray);
-        border-radius: 30px;
-        font-weight: 500;
-        font-size: 0.9rem;
-        transition: all 0.2s;
-      }
-      
-      .social-links a:hover {
-        background-color: var(--primary-color);
-        color: white;
-        text-decoration: none;
-        transform: translateY(-2px);
-      }
-      
-      .social-links i {
-        font-size: 1rem;
-      }
-      
-      .research-item {
-        display: flex;
-        margin-bottom: 40px;
-        padding-bottom: 30px;
-        border-bottom: 1px solid var(--border-color);
-        gap: 25px;
-      }
-      
-      .research-item:last-child {
-        border-bottom: none;
-      }
-      
-      .research-image {
-        width: 340px;
-        min-width: 340px;
-        border-radius: 6px;
-        overflow: hidden;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #f9f9f9;
-      }
-      
-      .research-image img {
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-        transition: transform 0.3s ease;
-      }
-      
-      .research-image img:hover {
-        transform: scale(1.03);
-      }
-      
-      .research-content {
-        flex: 1;
-      }
-      
-      .paper-title {
-        font-family: 'Lora', serif;
-        font-size: 1.3rem;
-        font-weight: 600;
-        color: var(--primary-color);
-        margin-bottom: 10px;
-        line-height: 1.4;
-      }
-      
-      .authors {
-        margin-bottom: 8px;
-        font-size: 0.95rem;
-        color: #555;
-      }
-      
-      .publication {
-        font-style: italic;
-        margin-bottom: 15px;
-        font-size: 0.95rem;
-        color: #666;
-      }
-      
-      .author-highlight {
-        font-weight: 600;
-        color: #444;
-      }
+                  :root {
+                    --primary-color: #122F51;
+                    --secondary-color: #3e6990;
+                    --accent-color: #1e88e5;
+                    --background-color: #ffffff;
+                    --text-color: #333333;
+                    --light-gray: #f5f5f5;
+                    --border-color: #e0e0e0;
+                  }
 
-      /* .career-section {
-        text-align: left;
-        margin: 0;
-        padding: 30px;
-        /* background-color: var(--light-green); */
-        border-radius: 8px;
-      } */
-      
-      .patent-section {
-        text-align: center;
-        margin: 40px 0;
-        padding: 30px;
-        background-color: var(--light-gray);
-        border-radius: 8px;
-      }
-      /* .stats-section {
-        text-align: left;
-        margin: 0;
-        padding: 30px;
-        /* background-color: var(--light-gray); */
-        border-radius: 8px;
-      } */
-      
-      .emoji-container {
+                  * {
+                    box-sizing: border-box;
+                    margin: 0;
+                    padding: 0;
+                  }
+
+                  body {
+                    font-family: 'Open Sans', sans-serif;
+                    line-height: 1.6;
+                    color: var(--text-color);
+                    background-color: var(--background-color);
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    padding: 20px;
+                  }
+
+                  .container {
+                    width: 100%;
+                    max-width: 1000px;
+                    margin: 0 auto;
+                    padding: 30px 20px;
+                    background-color: var(--background-color);
+                    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+                    border-radius: 8px;
+                  }
+
+                  /* Navigation Bar Styles */
+                  nav {
+                    width: 100%;
+                    background-color: var(--primary-color);
+                    padding: 12px 0;
+                    position: sticky;
+                    top: 0;
+                    z-index: 1000;
+                    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                    margin-bottom: 20px;
+                    border-radius: 8px;
+                  }
+
+                  .nav-container {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    max-width: 1000px;
+                    margin: 0 auto;
+                    padding: 0 20px;
+                  }
+
+                  .logo {
+                    font-family: 'Lora', serif;
+                    font-size: 1.4rem;
+                    font-weight: 600;
+                    color: white;
+                    text-decoration: none;
+                  }
+
+                  .nav-links {
+                    display: flex;
+                    gap: 30px;
+                  }
+
+                  .nav-links a {
+                    color: white;
+                    text-decoration: none;
+                    font-weight: 500;
+                    transition: all 0.3s ease;
+                    padding: 5px 10px;
+                    border-radius: 4px;
+                  }
+
+                  .nav-links a:hover {
+                    background-color: rgba(255, 255, 255, 0.2);
+                    text-decoration: none;
+                  }
+
+                  .mobile-menu-btn {
+                    display: none;
+                    color: white;
+                    font-size: 1.5rem;
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                  }
+
+                  header {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-bottom: 40px;
+                    position: relative;
+                    padding-bottom: 30px;
+                  }
+
+                  .header-content {
+                    display: flex;
+                    width: 100%;
+                    gap: 40px;
+                    align-items: center;
+                    margin-top: 20px;
+                  }
+
+                  .profile-image {
+                    width: 230px;
+                    height: 230px;
+                    border-radius: 8px;
+                    object-fit: cover;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                    transition: transform 0.3s ease;
+                  }
+
+                  .profile-image:hover {
+                    transform: scale(1.02);
+                  }
+
+                  .bio {
+                    flex: 1;
+                  }
+
+                  h1 {
+                    font-family: 'Lora', serif;
+                    font-size: 2.4rem;
+                    font-weight: 600;
+                    color: var(--primary-color);
+                    margin-bottom: 20px;
+                    letter-spacing: 0.5px;
+                    border-bottom: 2px solid var(--accent-color);
+                    padding-bottom: 10px;
+                    display: inline-block;
+                  }
+
+                  h2 {
+                    font-family: 'Lora', serif;
+                    font-size: 1.8rem;
+                    color: var(--primary-color);
+                    margin: 30px 0 20px 0;
+                    padding-bottom: 8px;
+                    border-bottom: 1px solid var(--border-color);
+                  }
+
+                  p {
+                    margin-bottom: 15px;
+                    line-height: 1.7;
+                    color: #444;
+                  }
+
+                  a {
+                    color: var(--accent-color);
+                    text-decoration: none;
+                    transition: color 0.2s;
+                  }
+
+                  a:hover {
+                    color: var(--secondary-color);
+                    text-decoration: underline;
+                  }
+
+                  .social-links {
+                    display: flex;
+                    gap: 20px;
+                    margin: 15px 0;
+                  }
+
+                  .social-links a {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    padding: 6px 15px;
+                    background-color: var(--light-gray);
+                    border-radius: 30px;
+                    font-weight: 500;
+                    font-size: 0.9rem;
+                    transition: all 0.2s;
+                  }
+
+                  .social-links a:hover {
+                    background-color: var(--primary-color);
+                    color: white;
+                    text-decoration: none;
+                    transform: translateY(-2px);
+                  }
+
+                  .social-links i {
+                    font-size: 1rem;
+                  }
+
+                  .research-item {
+                    display: flex;
+                    margin-bottom: 40px;
+                    padding-bottom: 30px;
+                    border-bottom: 1px solid var(--border-color);
+                    gap: 25px;
+                  }
+
+                  .research-item:last-child {
+                    border-bottom: none;
+                  }
+
+                  .research-image {
+                    width: 340px;
+                    min-width: 340px;
+                    border-radius: 6px;
+                    overflow: hidden;
+                    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: #f9f9f9;
+                  }
+
+                  .research-image img {
+                    width: 100%;
+                    height: auto;
+                    object-fit: contain;
+                    transition: transform 0.3s ease;
+                  }
+
+                  .research-image img:hover {
+                    transform: scale(1.03);
+                  }
+
+                  .research-content {
+                    flex: 1;
+                  }
+
+                  .paper-title {
+                    font-family: 'Lora', serif;
+                    font-size: 1.3rem;
+                    font-weight: 600;
+                    color: var(--primary-color);
+                    margin-bottom: 10px;
+                    line-height: 1.4;
+                  }
+
+                  .authors {
+                    margin-bottom: 8px;
+                    font-size: 0.95rem;
+                    color: #555;
+                  }
+
+                  .publication {
+                    font-style: italic;
+                    margin-bottom: 15px;
+                    font-size: 0.95rem;
+                    color: #666;
+                  }
+
+                  .author-highlight {
+                    font-weight: 600;
+                    color: #444;
+                  }
+
+                  /* .career-section {
+                    text-align: left;
+                    margin: 0;
+                    padding: 30px;
+                    /* background-color: var(--light-green); */
+                    border-radius: 8px;
+                  } */
+
+                  .patent-section {
+                    text-align: center;
+                    margin: 40px 0;
+                    padding: 30px;
+                    background-color: var(--light-gray);
+                    border-radius: 8px;
+                  }
+                  /* .stats-section {
+                    text-align: left;
+                    margin: 0;
+                    padding: 30px;
+                    /* background-color: var(--light-gray); */
+                    border-radius: 8px;
+                  } */
+
+                  .emoji-container {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 15px;
+                    margin-top: 15px;
+                  }
+
+                  .emoji {
+                    font-size: 28px;
+                    background-color: white;
+                    width: 60px;
+                    height: 60px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                    transition: transform 0.2s;
+                  }
+
+                  .emoji:hover {
+                    transform: scale(1.1);
+                  }
+
+                  .footer {
+                    text-align: center;
+                    margin-top: 50px;
+                    padding-top: 30px;
+                    border-top: 1px solid var(--border-color);
+                    font-size: 0.9rem;
+                    color: #777;
+                  }
+
+                  /* .contact-info {
+                    background-color: var(--light-gray);
+                    padding: 15px 20px;
+                    border-radius: 6px;
+                    margin-top: 15px;
+                  }
+
+                  .contact-info p {
+                    margin-bottom: 8px;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                  }
+
+                  .contact-info i {
+                    color: var(--secondary-color);
+                    width: 20px;
+                  } */
+                  .contact-info {
+              background-color: var(--light-gray);
+              /* 1. 减少内边距：上下从15px减到8px，左右从20px减到12px */
+              padding: 8px 12px;
+              border-radius: 6px;
+              /* 2. 减少上方间距 */
+              margin-top: 10px;
+              /* 3. 关键：让宽度自适应内容，而不是占满整行 */
+              width: fit-content;
+            }
+
+            .contact-info p {
+              /* 4. 减少每行文字之间的下间距 */
+              margin-bottom: 4px;
+              display: flex;
+              align-items: center;
+              gap: 8px; /* 稍微缩小图标和文字的间距 */
+              font-size: 0.95em; /* 可选：稍微缩小字号使整体更紧凑 */
+            }
+
+            /* 5. 去除最后一行多余的下边距，进一步压低高度 */
+            .contact-info p:last-child {
+              margin-bottom: 0;
+            }
+
+            .contact-info i {
+              color: var(--secondary-color);
+              /* 6. 稍微缩小图标占位宽度 */
+              width: 18px;
+              text-align: center;
+            }
+
+
+                  .footnote {
+                    font-size: 0.9rem;
+                    color: #666;
+                    border-left: 3px solid var(--accent-color);
+                    padding-left: 15px;
+                    margin: 15px 0;
+                  }
+
+                  @media (max-width: 900px) {
+                    .nav-links {
+                      display: none;
+                      flex-direction: column;
+                      position: absolute;
+                      top: 100%;
+                      left: 0;
+                      right: 0;
+                      background-color: var(--primary-color);
+                      padding: 20px;
+                      gap: 15px;
+                      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+                    }
+
+                    .nav-links.show {
+                      display: flex;
+                    }
+
+                    .mobile-menu-btn {
+                      display: block;
+                    }
+
+                    .header-content {
+                      flex-direction: column;
+                      align-items: center;
+                      text-align: center;
+                    }
+
+                    .profile-image {
+                      margin-bottom: 25px;
+                    }
+
+                    .social-links {
+                      justify-content: center;
+                    }
+
+                    .research-item {
+                      flex-direction: column;
+                      align-items: center;
+                    }
+
+                    .research-image {
+                      width: 100%;
+                      max-width: 350px;
+                      min-width: unset;
+                      margin-bottom: 20px;
+                    }
+                  }
+      /* Paper Tabs 样式 */
+      .paper-tabs {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-        margin-top: 15px;
-      }
-      
-      .emoji {
-        font-size: 28px;
-        background-color: white;
-        width: 60px;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        transition: transform 0.2s;
-      }
-      
-      .emoji:hover {
-        transform: scale(1.1);
-      }
-      
-      .footer {
-        text-align: center;
-        margin-top: 50px;
-        padding-top: 30px;
-        border-top: 1px solid var(--border-color);
-        font-size: 0.9rem;
-        color: #777;
-      }
-      
-      /* .contact-info {
-        background-color: var(--light-gray);
-        padding: 15px 20px;
-        border-radius: 6px;
-        margin-top: 15px;
-      }
-      
-      .contact-info p {
-        margin-bottom: 8px;
-        display: flex;
-        align-items: center;
         gap: 10px;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #e0e0e0;
+        padding-bottom: 10px;
       }
-      
-      .contact-info i {
-        color: var(--secondary-color);
-        width: 20px;
-      } */
-      .contact-info {
-  background-color: var(--light-gray);
-  /* 1. 减少内边距：上下从15px减到8px，左右从20px减到12px */
-  padding: 8px 12px;
-  border-radius: 6px;
-  /* 2. 减少上方间距 */
-  margin-top: 10px;
-  /* 3. 关键：让宽度自适应内容，而不是占满整行 */
-  width: fit-content; 
-}
 
-.contact-info p {
-  /* 4. 减少每行文字之间的下间距 */
-  margin-bottom: 4px;
-  display: flex;
-  align-items: center;
-  gap: 8px; /* 稍微缩小图标和文字的间距 */
-  font-size: 0.95em; /* 可选：稍微缩小字号使整体更紧凑 */
-}
-
-/* 5. 去除最后一行多余的下边距，进一步压低高度 */
-.contact-info p:last-child {
-  margin-bottom: 0;
-}
-
-.contact-info i {
-  color: var(--secondary-color);
-  /* 6. 稍微缩小图标占位宽度 */
-  width: 18px;
-  text-align: center;
-}
-
-      
-      .footnote {
-        font-size: 0.9rem;
+      .tab-btn {
+        padding: 8px 20px;
+        border: none;
+        background: #f5f5f5;
         color: #666;
-        border-left: 3px solid var(--accent-color);
-        padding-left: 15px;
-        margin: 15px 0;
+        cursor: pointer;
+        border-radius: 5px 5px 0 0;
+        font-size: 14px;
+        transition: all 0.3s ease;
       }
-      
-      @media (max-width: 900px) {
-        .nav-links {
-          display: none;
-          flex-direction: column;
-          position: absolute;
-          top: 100%;
-          left: 0;
-          right: 0;
-          background-color: var(--primary-color);
-          padding: 20px;
-          gap: 15px;
-          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-        }
-        
-        .nav-links.show {
-          display: flex;
-        }
-        
-        .mobile-menu-btn {
-          display: block;
-        }
-        
-        .header-content {
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-        }
-        
-        .profile-image {
-          margin-bottom: 25px;
-        }
-        
-        .social-links {
-          justify-content: center;
-        }
-        
-        .research-item {
-          flex-direction: column;
-          align-items: center;
-        }
-        
-        .research-image {
-          width: 100%;
-          max-width: 350px;
-          min-width: unset;
-          margin-bottom: 20px;
-        }
+
+      .tab-btn:hover {
+        background: #e0e0e0;
+      }
+
+      .tab-btn.active {
+        background: #2c3e50;
+        color: white;
+      }
+
+      /* Tab 内容样式 */
+      .tab-content {
+        display: none;
+      }
+
+      .tab-content.active {
+        display: block;
       }
     </style>
   </head>
@@ -457,28 +500,69 @@
         </div>
       </div>
     </nav>
-    
+
     <div class="container">
       <header id="about">
         <div class="header-content">
-          <img src="images/panda.jpeg" alt="Yipeng Yu" class="profile-image">
+          <img src="images/panda.jpeg" alt="Yipeng Yu" class="profile-image" />
           <div class="bio">
             <h1>Yipeng Yu (俞一鹏)</h1>
-            <p>Feel free to call me ian. I'm currently an AI researcher in Taobao & Tmall Group at Alibaba. My current research focuses on GenAI and Agentic AI.</p> 
-            <p>I obtained my Ph.D. degree in Computer Science from <a href="http://www.en.cs.zju.edu.cn/" target="_blank">Zhejiang University</a> under the supervision of
-              <a href="https://person.zju.edu.cn/en/gpan" target="_blank">Prof. Gang Pan</a> and <a href="https://english.cas.cn/about_us/administration/administrators/202404/t20240418_660430.shtml" target="_blank">Prof. Zhaohui Wu</a>, where I investigated Cyborg Intelligence (混合智能) using bidirectional Brain-Computer Interfaces. During this period, I also visited the <a href="https://nus.edu.sg/" target="_blank">National University of Singapore</a> as a visiting scholar under <a href="https://scholar.google.com/citations?user=LFngSp0AAAAJ&hl=en" target="_blank">Prof. Kay Chen TAN</a>.</p>
-               
+            <p>
+              Feel free to call me ian. I'm currently an AI researcher in Taobao
+              & Tmall Group at Alibaba. My current research focuses on GenAI and
+              Agentic AI.
+            </p>
+            <p>
+              I obtained my Ph.D. degree in Computer Science from
+              <a href="http://www.en.cs.zju.edu.cn/" target="_blank"
+                >Zhejiang University</a
+              >
+              under the supervision of
+              <a href="https://person.zju.edu.cn/en/gpan" target="_blank"
+                >Prof. Gang Pan</a
+              >
+              and
+              <a
+                href="https://english.cas.cn/about_us/administration/administrators/202404/t20240418_660430.shtml"
+                target="_blank"
+                >Prof. Zhaohui Wu</a
+              >, where I investigated Cyborg Intelligence (混合智能) using
+              bidirectional Brain-Computer Interfaces. During this period, I
+              also visited the
+              <a href="https://nus.edu.sg/" target="_blank"
+                >National University of Singapore</a
+              >
+              as a visiting scholar under
+              <a
+                href="https://scholar.google.com/citations?user=LFngSp0AAAAJ&hl=en"
+                target="_blank"
+                >Prof. Kay Chen TAN</a
+              >.
+            </p>
+
             <div class="contact-info" id="contact">
               <p><i class="fas fa-envelope"></i> yypzju ατ 163 Doτ com</p>
             </div>
-            
+
             <div class="social-links">
-              <a href="mailto:yypzju@163.com"><i class="fas fa-envelope"></i> Email</a>
+              <a href="mailto:yypzju@163.com"
+                ><i class="fas fa-envelope"></i> Email</a
+              >
               <!-- <a href="https://scholar.google.com/citations?user=3Y10QrgAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a> -->
               <!-- <a href="https://scholar.google.com/citations?user=3Y10QrgAAAAJ&hl=en" target="_blank"><i class="ai ai-google-scholar"></i> Google Scholar</a> -->
-              <a href="https://scholar.google.com/citations?user=3Y10QrgAAAAJ&hl=en" target="_blank"><i class="fab fa-google-scholar"></i> Google Scholar</a>
-              <a href="https://www.linkedin.com/in/yipeng-ian-yu-0b57b770/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-              <a href="https://www.x.com/" target="_blank"><i class="fab fa-x-twitter"></i> Twitter</a>
+              <a
+                href="https://scholar.google.com/citations?user=3Y10QrgAAAAJ&hl=en"
+                target="_blank"
+                ><i class="fab fa-google-scholar"></i> Google Scholar</a
+              >
+              <a
+                href="https://www.linkedin.com/in/yipeng-ian-yu-0b57b770/"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i> LinkedIn</a
+              >
+              <a href="https://www.x.com/" target="_blank"
+                ><i class="fab fa-x-twitter"></i> Twitter</a
+              >
               <!-- <a href="https://www.x.com/" target="_blank"><i class="fa-brands fa-x-twitter"></i> Twitter</a> -->
               <!-- <a href="https://www.x.com/" target="_blank"><i class="fa-brands fa-x-twitter"></i> Twitter</a> -->
             </div>
@@ -487,479 +571,873 @@
       </header>
 
       <!-- Career -->
-      <section id="career" style="padding-top: 10px;">
-      <div class="row-fluid content-header text-left" style="margin-top: 0px;">
-        <h2 style="margin-top: 0px;"><strong>Career</strong></h2>
-      </div>
-      <div class="row">
-        <ul>
-          <table style="width:100%">
-            <tr>
-              <td>2023 - Now</td>
-              <td> Manager & Staff Algorithm Engineer</td> 
-              <td> E-commerce, Taobao & Tmall Group, Alibaba</td> 
-              <td>Hangzhou, China</td>
-            </tr>
-            <tr>
-              <td>2018 - 2023</td>
-              <td>Tec Leader & Senior Researcher</td>
-              <td>Games, Interactive Entertainment Group, Tencent</td>
-              <td>Shanghai, China</td>
-            </tr>
-            <tr>
-              <td>2016 - 2018</td>
-              <td>Research Scientist</td>
-              <td>Dialog & IoT, China Research Lab, IBM</td>
-              <td>Beijing, China</td>
-            </tr>
-          </table>
-        </ul>
-      </div>
+      <section id="career" style="padding-top: 10px">
+        <div class="row-fluid content-header text-left" style="margin-top: 0px">
+          <h2 style="margin-top: 0px"><strong>Career</strong></h2>
+        </div>
+        <div class="row">
+          <ul>
+            <table style="width: 100%">
+              <tr>
+                <td>2023 - Now</td>
+                <td>Manager & Staff Algorithm Engineer</td>
+                <td>E-commerce, Taobao & Tmall Group, Alibaba</td>
+                <td>Hangzhou, China</td>
+              </tr>
+              <tr>
+                <td>2018 - 2023</td>
+                <td>Tec Leader & Senior Researcher</td>
+                <td>Games, Interactive Entertainment Group, Tencent</td>
+                <td>Shanghai, China</td>
+              </tr>
+              <tr>
+                <td>2016 - 2018</td>
+                <td>Research Scientist</td>
+                <td>Dialog & IoT, China Research Lab, IBM</td>
+                <td>Beijing, China</td>
+              </tr>
+            </table>
+          </ul>
+        </div>
       </section>
 
       <section id="paper">
         <h2>Paper</h2>
+
+        <!-- Tab 导航 -->
+        <div class="paper-tabs">
+          <button class="tab-btn active" onclick="switchTab('highlight')">
+            Highlight
+          </button>
+          <button class="tab-btn" onclick="switchTab('all')">All</button>
+        </div>
+
         <div class="footnote">
-          Selected papers, <sup>*</sup> denotes equal contribution, and <sup>†</sup> denotes corresponding author.
+          Selected papers, <sup>*</sup> denotes equal contribution, and
+          <sup>†</sup> denotes corresponding author.
         </div>
 
-        <div class="research-item">
-          <div class="research-image">
-            <img src="images/search-review-research.png" alt="Deep Research">
-          </div>
-          <div class="research-content">
-            <a href="https://arxiv.org/abs/2603.28361" target="_blank">
-              <div class="paper-title">Deep Research of Deep Research: From Transformer to Agent, From AI to AI for Science
-</div>
-            </a>
-            <div class="authors">
-              <span class="author-highlight">Yipeng Yu</span>
+        <div id="tab-highlight" class="tab-content active">
+          <div class="research-item">
+            <div class="research-image">
+              <img
+                src="images/search-review-research.png"
+                alt="Deep Research"
+              />
             </div>
-            <div class="publication">arXiv, 2026</div>
-            <p> This paper provides a deep research of deep research. We position LLMs and Stable Diffusion as the twin pillars of generative AI, and lay out a roadmap evolving from the Transformer to agents. We examine the progress of AI4S across various disciplines. We identify the predominant paradigms of human-AI interaction and prevailing system architectures, and discuss the major challenges and fundamental research issues that remain. AI supports scientific innovation, and science also can contribute to AI growth (Science for AI, S4AI).</p>
-          </div>
-        </div>
-
-        
-        <div class="research-item">
-          <div class="research-image">
-            <img src="images/www26.png" alt="Topology">
-          </div>
-          <div class="research-content">
-            <a href="https://dl.acm.org/doi/abs/10.1145/3774904.3792894" target="_blank">
-              <span class="paper-title">SIT-KGED: Simply Inject Topology into LLM for Knowledge Graph Error Detection</span>
-            </a>
-            <a href="https://github.com/liting1024/SIT-KGED" target="_blank">
-              <img src="https://img.shields.io/badge/Code-GitHub-blue?style=flat-square&logo=github" alt="Code">
-           </a>
-            <div class="authors">
-              <a>Ting Li</a>,
-              <a>Xingyi Mao</a>,
-              <span class="author-highlight">Yipeng Yu</span>,
-              <a>Liang Yao</a>
+            <div class="research-content">
+              <a href="https://arxiv.org/abs/2603.28361" target="_blank">
+                <div class="paper-title">
+                  Deep Research of Deep Research: From Transformer to Agent,
+                  From AI to AI for Science
+                </div>
+              </a>
+              <div class="authors">
+                <span class="author-highlight">Yipeng Yu</span>
+              </div>
+              <div class="publication">arXiv, 2026</div>
+              <p>
+                This paper provides a deep research of deep research. We
+                position LLMs and Stable Diffusion as the twin pillars of
+                generative AI, and lay out a roadmap evolving from the
+                Transformer to agents. We examine the progress of AI4S across
+                various disciplines. We identify the predominant paradigms of
+                human-AI interaction and prevailing system architectures, and
+                discuss the major challenges and fundamental research issues
+                that remain. AI supports scientific innovation, and science also
+                can contribute to AI growth (Science for AI, S4AI).
+              </p>
             </div>
-            <div class="publication">WWW, Short, Proceedings of the ACM Web Conference 2026</div>
-            <p>In this work, we extend KGED to a four-class classification task to identify which element is incorrect or whether the triple is correct. Directly adapting existing LLM-based methods to this setting yields limited performance, as they fail to effectively exploit the topological information of KGs. To address this issue, we propose a novel topology-injected LLM framework, which precomputes high-order common neighbors between head and tail entities as topological evidence, thereby reducing complexity. Furthermore, we introduce a mixture-of-experts adapter that maps structural and topological evidence into the text embedding space.</p>
           </div>
-        </div>
 
-        <div class="research-item">
-          <div class="research-image">
-            <img src="images/doc.png" alt="Document">
-          </div>
-          <div class="research-content">
-            <a href="https://aclanthology.org/2025.emnlp-main.429/" target="_blank">
-              <span class="paper-title">SEAL: Structure and Element Aware Learning Improves Long Structured Document Retrieval</span>
-            </a>
-            <a href="https://github.com/xinhaoH/SEAL" target="_blank">
-              <img src="https://img.shields.io/badge/Code-GitHub-blue?style=flat-square&logo=github" alt="Code">
-           </a>
-            <div class="authors">
-              <a>Xinhao Huang</a>,
-              <a>Zhibo Ren</a>,
-              <span class="author-highlight">Yipeng Yu</span>,
-              <a>Ying Zhou</a>,
-              <a>Zulong Chen</a>,
-              <a>Zeyi Wen</a>
+          <div class="research-item">
+            <div class="research-image">
+              <img src="images/www26.png" alt="Topology" />
             </div>
-            <div class="publication">EMNLP, Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing</div>
-            <p>We propose SEAL, a novel contrastive learning framework. It leverages structure-aware learning to preserve semantic hierarchies and masked element alignment for fine-grained semantic discrimination. Furthermore, we release StructDocRetrieval, a long structured document retrieval dataset with rich structural annotations. Extensive experiments on both the released and industrial datasets across various modern PLMs, and online A/B testing demonstrate consistent improvements, boosting NDCG@10 from 73.96% to 77.84% on BGE-M3.</p>
-          </div>
-        </div>
-
-        <div class="research-item">
-          <div class="research-image">
-            <img src="images/edge.png" alt="Behavioral Cues">
-          </div>
-          <div class="research-content">
-            <a href="https://www.sciencedirect.com/science/article/pii/S2451958825002209" target="_blank">
-              <div class="paper-title">Beyond algorithms: Utilizing multi-modal emotional and behavioral cues as novel predictors of short-video consumption</div>
-            </a>
-            <div class="authors">
-              <a>Minglan Li<sup>*</sup></a>,
-              <span class="author-highlight">Yipeng Yu<sup>*</sup></span>,
-              <a>Xu Liu</a>,
-              <a>Junqing Wu</a>,
-              <a>Qiandong Wang</a>,
-              <a>Yueqin Hu</a>
+            <div class="research-content">
+              <a
+                href="https://dl.acm.org/doi/abs/10.1145/3774904.3792894"
+                target="_blank"
+              >
+                <span class="paper-title"
+                  >SIT-KGED: Simply Inject Topology into LLM for Knowledge Graph
+                  Error Detection</span
+                >
+              </a>
+              <a href="https://github.com/liting1024/SIT-KGED" target="_blank">
+                <img
+                  src="https://img.shields.io/badge/Code-GitHub-blue?style=flat-square&logo=github"
+                  alt="Code"
+                />
+              </a>
+              <div class="authors">
+                <a>Ting Li</a>, <a>Xingyi Mao</a>,
+                <span class="author-highlight">Yipeng Yu</span>,
+                <a>Liang Yao</a>
+              </div>
+              <div class="publication">
+                WWW, Short, Proceedings of the ACM Web Conference 2026
+              </div>
+              <p>
+                In this work, we extend KGED to a four-class classification task
+                to identify which element is incorrect or whether the triple is
+                correct. Directly adapting existing LLM-based methods to this
+                setting yields limited performance, as they fail to effectively
+                exploit the topological information of KGs. To address this
+                issue, we propose a novel topology-injected LLM framework, which
+                precomputes high-order common neighbors between head and tail
+                entities as topological evidence, thereby reducing complexity.
+                Furthermore, we introduce a mixture-of-experts adapter that maps
+                structural and topological evidence into the text embedding
+                space.
+              </p>
             </div>
-            <div class="publication">Computers in Human Behavior Reports [J], 2025</div>
-            <p>This study aims to address this gap by incorporating users' emotional and behavioral indicators into the prediction of short-video viewing behavior. Study 1 was conducted in a controlled laboratory setting, where participants viewed videos on a computer screen while their physiological activity was recorded as an objective measure of emotional responses. Study 2 aimed to enhance ecological validity by having participants view videos on mobile phones, enabling them to swipe between videos as they would in a typical short-video app. Our findings provide valuable insights into the psychological drivers of short video viewing behavior and present a novel, non-intrusive approach to incorporate users’ real-time experiences into recommendation systems.</p>
           </div>
-        </div>
 
-        <div class="research-item">
-          <div class="research-image">
-            <img src="images/condition.png" alt="Condition">
-          </div>
-          <div class="research-content">
-            <a href="https://dl.acm.org/doi/10.1609/aaai.v39i4.32386" target="_blank">
-              <span class="paper-title">Resolving multi-condition confusion for finetuning-free personalized image generation</span>
-            </a>
-            <a href="https://github.com/hqhQAQ/MIP-Adapter" target="_blank">
-              <img src="https://img.shields.io/badge/Code-GitHub-blue?style=flat-square&logo=github" alt="Code">
-           </a>
-            <div class="authors">
-              <a>Qihan Huang</a>,
-              <a>Siming Fu</a>,
-              <a>Jinlong Liu</a>,
-              <a>Hao Jiang</a>,
-              <span class="author-highlight">Yipeng Yu</span>,
-              <a>Jie Song</a>
+          <div class="research-item">
+            <div class="research-image">
+              <img src="images/doc.png" alt="Document" />
             </div>
-            <div class="publication">AAAI 2025, The 39th Annual AAAI Conference on Artificial Intelligence</div>
-            <p>In this work we investigate the relevance of different positions of the latent image features to the target object in diffusion model, and accordingly propose a weighted-merge method to merge multiple reference image features into the corresponding objects. Next, we integrate this weighted-merge method into existing pre-trained models and continue to train the model on a multi-object dataset constructed from the open-sourced SA-1B dataset.</p> 
-          </div>
-        </div>
-
-        <div class="research-item">
-          <div class="research-image">
-            <img src="images/videomaster.png" alt="VideoMaster">
-          </div>
-          <div class="research-content">
-            <a href="https://www.ijcai.org/proceedings/2023/844" target="_blank">
-              <span class="paper-title">VideoMaster: A Multimodal Micro Game Video Recreator</span>
-            </a>
-            <a href="https://share.weiyun.com/e53rrZSK" target="_blank">
-              <img src="https://img.shields.io/badge/Watch-Video-orange?style=flat-square&logo=aparat" alt="Video">
-            </a>
-            <div class="authors">
-              <span class="author-highlight">Yipeng Yu<sup>†</sup></span>,
-              <a>Xiao Chen</a>,
-              <a>Hui Zhan</a>
+            <div class="research-content">
+              <a
+                href="https://aclanthology.org/2025.emnlp-main.429/"
+                target="_blank"
+              >
+                <span class="paper-title"
+                  >SEAL: Structure and Element Aware Learning Improves Long
+                  Structured Document Retrieval</span
+                >
+              </a>
+              <a href="https://github.com/xinhaoH/SEAL" target="_blank">
+                <img
+                  src="https://img.shields.io/badge/Code-GitHub-blue?style=flat-square&logo=github"
+                  alt="Code"
+                />
+              </a>
+              <div class="authors">
+                <a>Xinhao Huang</a>, <a>Zhibo Ren</a>,
+                <span class="author-highlight">Yipeng Yu</span>,
+                <a>Ying Zhou</a>, <a>Zulong Chen</a>,
+                <a>Zeyi Wen</a>
+              </div>
+              <div class="publication">
+                EMNLP, Proceedings of the 2025 Conference on Empirical Methods
+                in Natural Language Processing
+              </div>
+              <p>
+                We propose SEAL, a novel contrastive learning framework. It
+                leverages structure-aware learning to preserve semantic
+                hierarchies and masked element alignment for fine-grained
+                semantic discrimination. Furthermore, we release
+                StructDocRetrieval, a long structured document retrieval dataset
+                with rich structural annotations. Extensive experiments on both
+                the released and industrial datasets across various modern PLMs,
+                and online A/B testing demonstrate consistent improvements,
+                boosting NDCG@10 from 73.96% to 77.84% on BGE-M3.
+              </p>
             </div>
-            <div class="publication">IJCAI 2023, Demo, Proceedings of the Thirty-Second International Joint Conference on Artificial Intelligence
-</div>
-            <p>To free human from laborious video production, this paper proposes the building of VideoMaster, a multimodal system equipped with four capabilities: highlight extraction, video describing, video dubbing and video editing. It extracts interesting episodes from long game videos, generates subtitles for each episode, reads the subtitles through synthesized speech, and finally re-creates a better short video through video editing. To the best of our knowledge, VideoMaster is the first multimedia system that can automatically produce product-level micro-videos without heavy human annotation.</p> 
           </div>
-        </div>
 
-      <div class="research-item">
-          <div class="research-image">
-            <img src="images/text2video.png" alt="Text2Video">
-          </div>
-          <div class="research-content">
-            <a href="https://dl.acm.org/doi/abs/10.1145/3474085.3478548" target="_blank">
-              <span class="paper-title">Text2Video: Automatic Video Generation Based on Text Scripts</span>
-            </a>
-            <a href="https://dl.acm.org/doi/suppl/10.1145/3474085.3478548/suppl_file/de3172.mp4" target="_blank">
-              <img src="https://img.shields.io/badge/Watch-Video-orange?style=flat-square&logo=aparat" alt="Video">
-            </a>
-            <div class="authors">
-              <span class="author-highlight">Yipeng Yu<sup>†</sup></span>,
-              <a>Zirui Tu</a>,
-              <a>Longyu Lu</a>,
-              <a>Xiao Chen</a>,
-              <a>Hui Zhan</a>,
-              <a>Zixun Sun</a>
+          <div class="research-item">
+            <div class="research-image">
+              <img src="images/edge.png" alt="Behavioral Cues" />
             </div>
-            <div class="publication">ACM MM 2021, Proceedings of the 29th ACM International Conference on Multimedia
-</div>
-            <p>We present Text2Video, a novel system to automatically produce videos using only text-editing for novice users. Given an input text script, the director-like system can generate game-related engaging videos which illustrate the given narrative, provide diverse multi-modal content, and follow video editing guidelines. The system involves five modules.</p> 
+            <div class="research-content">
+              <a
+                href="https://www.sciencedirect.com/science/article/pii/S2451958825002209"
+                target="_blank"
+              >
+                <div class="paper-title">
+                  Beyond algorithms: Utilizing multi-modal emotional and
+                  behavioral cues as novel predictors of short-video consumption
+                </div>
+              </a>
+              <div class="authors">
+                <a>Minglan Li<sup>*</sup></a
+                >, <span class="author-highlight">Yipeng Yu<sup>*</sup></span
+                >, <a>Xu Liu</a>, <a>Junqing Wu</a>, <a>Qiandong Wang</a>,
+                <a>Yueqin Hu</a>
+              </div>
+              <div class="publication">
+                Computers in Human Behavior Reports [J], 2025
+              </div>
+              <p>
+                This study aims to address this gap by incorporating users'
+                emotional and behavioral indicators into the prediction of
+                short-video viewing behavior. Study 1 was conducted in a
+                controlled laboratory setting, where participants viewed videos
+                on a computer screen while their physiological activity was
+                recorded as an objective measure of emotional responses. Study 2
+                aimed to enhance ecological validity by having participants view
+                videos on mobile phones, enabling them to swipe between videos
+                as they would in a typical short-video app. Our findings provide
+                valuable insights into the psychological drivers of short video
+                viewing behavior and present a novel, non-intrusive approach to
+                incorporate users’ real-time experiences into recommendation
+                systems.
+              </p>
+            </div>
+          </div>
+
+          <div class="research-item">
+            <div class="research-image">
+              <img src="images/condition.png" alt="Condition" />
+            </div>
+            <div class="research-content">
+              <a
+                href="https://dl.acm.org/doi/10.1609/aaai.v39i4.32386"
+                target="_blank"
+              >
+                <span class="paper-title"
+                  >Resolving multi-condition confusion for finetuning-free
+                  personalized image generation</span
+                >
+              </a>
+              <a href="https://github.com/hqhQAQ/MIP-Adapter" target="_blank">
+                <img
+                  src="https://img.shields.io/badge/Code-GitHub-blue?style=flat-square&logo=github"
+                  alt="Code"
+                />
+              </a>
+              <div class="authors">
+                <a>Qihan Huang</a>, <a>Siming Fu</a>, <a>Jinlong Liu</a>,
+                <a>Hao Jiang</a>,
+                <span class="author-highlight">Yipeng Yu</span>,
+                <a>Jie Song</a>
+              </div>
+              <div class="publication">
+                AAAI 2025, The 39th Annual AAAI Conference on Artificial
+                Intelligence
+              </div>
+              <p>
+                In this work we investigate the relevance of different positions
+                of the latent image features to the target object in diffusion
+                model, and accordingly propose a weighted-merge method to merge
+                multiple reference image features into the corresponding
+                objects. Next, we integrate this weighted-merge method into
+                existing pre-trained models and continue to train the model on a
+                multi-object dataset constructed from the open-sourced SA-1B
+                dataset.
+              </p>
+            </div>
+          </div>
+
+          <div class="research-item">
+            <div class="research-image">
+              <img src="images/videomaster.png" alt="VideoMaster" />
+            </div>
+            <div class="research-content">
+              <a
+                href="https://www.ijcai.org/proceedings/2023/844"
+                target="_blank"
+              >
+                <span class="paper-title"
+                  >VideoMaster: A Multimodal Micro Game Video Recreator</span
+                >
+              </a>
+              <a href="https://share.weiyun.com/e53rrZSK" target="_blank">
+                <img
+                  src="https://img.shields.io/badge/Watch-Video-orange?style=flat-square&logo=aparat"
+                  alt="Video"
+                />
+              </a>
+              <div class="authors">
+                <span class="author-highlight">Yipeng Yu<sup>†</sup></span
+                >, <a>Xiao Chen</a>,
+                <a>Hui Zhan</a>
+              </div>
+              <div class="publication">
+                IJCAI 2023, Demo, Proceedings of the Thirty-Second International
+                Joint Conference on Artificial Intelligence
+              </div>
+              <p>
+                To free human from laborious video production, this paper
+                proposes the building of VideoMaster, a multimodal system
+                equipped with four capabilities: highlight extraction, video
+                describing, video dubbing and video editing. It extracts
+                interesting episodes from long game videos, generates subtitles
+                for each episode, reads the subtitles through synthesized
+                speech, and finally re-creates a better short video through
+                video editing. To the best of our knowledge, VideoMaster is the
+                first multimedia system that can automatically produce
+                product-level micro-videos without heavy human annotation.
+              </p>
+            </div>
+          </div>
+
+          <div class="research-item">
+            <div class="research-image">
+              <img src="images/text2video.png" alt="Text2Video" />
+            </div>
+            <div class="research-content">
+              <a
+                href="https://dl.acm.org/doi/abs/10.1145/3474085.3478548"
+                target="_blank"
+              >
+                <span class="paper-title"
+                  >Text2Video: Automatic Video Generation Based on Text
+                  Scripts</span
+                >
+              </a>
+              <a
+                href="https://dl.acm.org/doi/suppl/10.1145/3474085.3478548/suppl_file/de3172.mp4"
+                target="_blank"
+              >
+                <img
+                  src="https://img.shields.io/badge/Watch-Video-orange?style=flat-square&logo=aparat"
+                  alt="Video"
+                />
+              </a>
+              <div class="authors">
+                <span class="author-highlight">Yipeng Yu<sup>†</sup></span
+                >, <a>Zirui Tu</a>, <a>Longyu Lu</a>, <a>Xiao Chen</a>,
+                <a>Hui Zhan</a>,
+                <a>Zixun Sun</a>
+              </div>
+              <div class="publication">
+                ACM MM 2021, Proceedings of the 29th ACM International
+                Conference on Multimedia
+              </div>
+              <p>
+                We present Text2Video, a novel system to automatically produce
+                videos using only text-editing for novice users. Given an input
+                text script, the director-like system can generate game-related
+                engaging videos which illustrate the given narrative, provide
+                diverse multi-modal content, and follow video editing
+                guidelines. The system involves five modules.
+              </p>
+            </div>
           </div>
         </div>
 
+        <!-- All Tab (展示所有论文，包括3个样例) -->
+        <div id="tab-all" class="tab-content">
+          <!-- 样例论文 1 -->
+          <div class="research-item">
+            <div class="research-image">
+              <img src="images/placeholder1.png" alt="Paper 1" />
+            </div>
+            <div class="research-content">
+              <a href="#" target="_blank">
+                <div class="paper-title">
+                  Sample Paper Title: Advances in Neural Architecture Search
+                </div>
+              </a>
+              <div class="authors">
+                <span class="author-highlight">Yipeng Yu</span>,
+                <a>Co-author A</a>, <a>Co-author B</a>
+              </div>
+              <div class="publication">
+                NeurIPS 2024, Conference on Neural Information Processing
+                Systems
+              </div>
+              <p>
+                This is a sample paper description demonstrating the All tab
+                functionality. It shows how additional papers beyond the
+                highlighted ones can be displayed in a separate tab.
+              </p>
+            </div>
+          </div>
+
+          <!-- 样例论文 2 -->
+          <div class="research-item">
+            <div class="research-image">
+              <img src="images/placeholder2.png" alt="Paper 2" />
+            </div>
+            <div class="research-content">
+              <a href="#" target="_blank">
+                <div class="paper-title">
+                  Another Research Work: Multi-Modal Learning for
+                  Vision-Language Tasks
+                </div>
+              </a>
+              <div class="authors">
+                <a>First Author</a>,
+                <span class="author-highlight">Yipeng Yu<sup>†</sup></span
+                >, <a>Other Authors</a>
+              </div>
+              <div class="publication">
+                CVPR 2024, IEEE/CVF Conference on Computer Vision and Pattern
+                Recognition
+              </div>
+              <p>
+                Another sample paper showcasing the complete list of
+                publications. This demonstrates the tab switching functionality
+                between highlighted and all papers.
+              </p>
+            </div>
+          </div>
+
+          <!-- 样例论文 3 -->
+          <div class="research-item">
+            <div class="research-image">
+              <img src="images/placeholder3.png" alt="Paper 3" />
+            </div>
+            <div class="research-content">
+              <a href="#" target="_blank">
+                <div class="paper-title">
+                  Third Sample: Efficient Transformer Architectures for Long
+                  Sequences
+                </div>
+              </a>
+              <a href="#" target="_blank"
+                ><img
+                  src="https://img.shields.io/badge/Code-GitHub-blue?style=flat-square&logo=github"
+                  alt="Code"
+              /></a>
+              <div class="authors">
+                <span class="author-highlight">Yipeng Yu<sup>*</sup></span
+                >, <a>Equal Contrib</a>, <a>Advisor Name</a>
+              </div>
+              <div class="publication">
+                ICML 2024, International Conference on Machine Learning
+              </div>
+              <p>
+                Third sample paper with code availability badge. This completes
+                the demonstration of three sample papers in the All tab.
+              </p>
+            </div>
+          </div>
+
+          <!-- 可以在这里添加更多论文... -->
+        </div>
       </section>
-      
+
       <section id="patent" class="patent-section">
-  <div class="container">
-    <h2>Patent</h2>
-    <div class="footnote">
-          Granted patents, most U.S. patents are sorted alphabetically by name.
-    </div>
-    <!-- 美国专利组 -->
-    <div class="patent-group">
-      <h3 class="group-title">🇺🇸 US Patents</h3>
-      <ul class="patent-list">
-        <li class="patent-item">
-          <span class="patent-number">US12070686B2</span> | 
-          <a href="https://patents.google.com/patent/US12070686B2/en" class="patent-title" target="_blank" style="font-weight: bold;">Barrage generation method and apparatus and computer-readable storage medium
-</a> | 
-          <span class="patent-meta">
-            2024-08-27
-          </span>
-        </li>
-        <li class="patent-item">
-          <span class="patent-number">US11500973B2
-</span> | 
-          <a href="https://patents.google.com/patent/US11500973B2/en" class="patent-title" target="_blank" style="font-weight: bold;">Electroencephalography (EEG) based authentication</a> | 
-          <span class="patent-meta">
-            2022-11-15
-          </span>
-        </li>
+        <div class="container">
+          <h2>Patent</h2>
+          <div class="footnote">
+            Granted patents, most U.S. patents are sorted alphabetically by
+            name.
+          </div>
+          <!-- 美国专利组 -->
+          <div class="patent-group">
+            <h3 class="group-title">🇺🇸 US Patents</h3>
+            <ul class="patent-list">
+              <li class="patent-item">
+                <span class="patent-number">US12070686B2</span> |
+                <a
+                  href="https://patents.google.com/patent/US12070686B2/en"
+                  class="patent-title"
+                  target="_blank"
+                  style="font-weight: bold"
+                  >Barrage generation method and apparatus and computer-readable
+                  storage medium
+                </a>
+                |
+                <span class="patent-meta"> 2024-08-27 </span>
+              </li>
+              <li class="patent-item">
+                <span class="patent-number">US11500973B2 </span> |
+                <a
+                  href="https://patents.google.com/patent/US11500973B2/en"
+                  class="patent-title"
+                  target="_blank"
+                  style="font-weight: bold"
+                  >Electroencephalography (EEG) based authentication</a
+                >
+                |
+                <span class="patent-meta"> 2022-11-15 </span>
+              </li>
 
-         <li class="patent-item">
-          <span class="patent-number">US11238111B2</span> | 
-          <a href="https://patents.google.com/patent/US11238111B2/en" class="patent-title" target="_blank" style="font-weight: bold;">Response generation</a> | 
-          <span class="patent-meta">
-            2022-02-01
-          </span>
-        </li>
-        
-        <li class="patent-item">
-          <span class="patent-number">US11222283B2</span> | 
-          <a href="https://patents.google.com/patent/US11222283B2/en" class="patent-title" target="_blank" style="font-weight: bold;">Hierarchical conversational policy learning for sales strategy planning</a> | 
-          <span class="patent-meta">
-            2022-01-11
-          </span>
-        </li>
-         <li class="patent-item">
-          <span class="patent-number">US11195620B2</span> | 
-          <a href="https://patents.google.com/patent/US11195620B2/en" class="patent-title" target="_blank" style="font-weight: bold;">Progress evaluation of a diagnosis process
-</a> | 
-          <span class="patent-meta">
-            2021-12-07
-          </span>
-        </li>
-        <li class="patent-item">
-          <span class="patent-number">US10953877B2</span> | 
-          <a href="https://patents.google.com/patent/US10953877B2/en" class="patent-title" target="_blank" style="font-weight: bold;">Road condition prediction</a> | 
-          <span class="patent-meta">
-            2021-03-23
-          </span>
-        </li>
-        
-        <li class="patent-item">
-          <span class="patent-number">US10692486B2</span> | 
-          <a href="https://patents.google.com/patent/US10692486B2/en" class="patent-title" target="_blank" style="font-weight: bold;">Forest inference engine on conversation platform</a> | 
-          <span class="patent-meta">
-            2020-06-23
-          </span>
-        </li>
-        <li class="patent-item">
-          <span class="patent-number">US10635521B2</span> | 
-          <a href="https://patents.google.com/patent/US10635521B2/en" class="patent-title" target="_blank" style="font-weight: bold;">Conversational problem determination based on bipartite graph
-</a> | 
-          <span class="patent-meta">
-            2020-04-28
-          </span>
-        </li>
-        <li class="patent-item">
-          <span class="patent-number">US10482227B2</span> | 
-          <a href="https://patents.google.com/patent/US10482227B2/en" class="patent-title" target="_blank" style="font-weight: bold;">Electroencephalography (EEG) based authentication
-</a> | 
-          <span class="patent-meta">
-            2019-11-19 | <a href="https://www.ipwatchdog.com/2019/12/27/high-profile-patents-2019/id=117362/" target="_blank">IBM Most High-Profile Patents of 2019 (9262 in total)</a>
-          </span>
-        </li>
-         <li class="patent-item">
-          <span class="patent-number">US10185753B1</span> | 
-          <a href="https://patents.google.com/patent/US10185753B1/en" class="patent-title" target="_blank" style="font-weight: bold;">Mining procedure dialogs from source content</a> | 
-          <span class="patent-meta">
-            2019-01-22
-          </span>
-        </li>
-        <li class="patent-item">
-          <span class="patent-number">US10171662B1</span> | 
-          <a href="https://patents.google.com/patent/US10171662" class="patent-title" target="_blank" style="font-weight: bold;">Intervention in conversation between virtual agent and user</a> | 
-          <span class="patent-meta">
-            2019-01-01
-          </span>
-        </li>
-        
-        
-      </ul>
-    </div>
+              <li class="patent-item">
+                <span class="patent-number">US11238111B2</span> |
+                <a
+                  href="https://patents.google.com/patent/US11238111B2/en"
+                  class="patent-title"
+                  target="_blank"
+                  style="font-weight: bold"
+                  >Response generation</a
+                >
+                |
+                <span class="patent-meta"> 2022-02-01 </span>
+              </li>
 
-    <!-- 中国专利组 -->
-    <div class="patent-group">
-      <h3 class="group-title">🇨🇳 Chinese Patents</h3>
-      <ul class="patent-list">
+              <li class="patent-item">
+                <span class="patent-number">US11222283B2</span> |
+                <a
+                  href="https://patents.google.com/patent/US11222283B2/en"
+                  class="patent-title"
+                  target="_blank"
+                  style="font-weight: bold"
+                  >Hierarchical conversational policy learning for sales
+                  strategy planning</a
+                >
+                |
+                <span class="patent-meta"> 2022-01-11 </span>
+              </li>
+              <li class="patent-item">
+                <span class="patent-number">US11195620B2</span> |
+                <a
+                  href="https://patents.google.com/patent/US11195620B2/en"
+                  class="patent-title"
+                  target="_blank"
+                  style="font-weight: bold"
+                  >Progress evaluation of a diagnosis process
+                </a>
+                |
+                <span class="patent-meta"> 2021-12-07 </span>
+              </li>
+              <li class="patent-item">
+                <span class="patent-number">US10953877B2</span> |
+                <a
+                  href="https://patents.google.com/patent/US10953877B2/en"
+                  class="patent-title"
+                  target="_blank"
+                  style="font-weight: bold"
+                  >Road condition prediction</a
+                >
+                |
+                <span class="patent-meta"> 2021-03-23 </span>
+              </li>
 
-        <li class="patent-item">
-          <span class="patent-number">CN112163560B</span> | 
-          <a href="https://patents.google.com/patent/CN112163560A/zh" class="patent-title" target="_blank" style="font-weight: bold;">一种视频信息处理方法、装置、电子设备及存储介质</a> | 
-          <span class="patent-meta">
-           2024-03-05 | ZL202011141537.1
-          </span>
-        </li>
+              <li class="patent-item">
+                <span class="patent-number">US10692486B2</span> |
+                <a
+                  href="https://patents.google.com/patent/US10692486B2/en"
+                  class="patent-title"
+                  target="_blank"
+                  style="font-weight: bold"
+                  >Forest inference engine on conversation platform</a
+                >
+                |
+                <span class="patent-meta"> 2020-06-23 </span>
+              </li>
+              <li class="patent-item">
+                <span class="patent-number">US10635521B2</span> |
+                <a
+                  href="https://patents.google.com/patent/US10635521B2/en"
+                  class="patent-title"
+                  target="_blank"
+                  style="font-weight: bold"
+                  >Conversational problem determination based on bipartite graph
+                </a>
+                |
+                <span class="patent-meta"> 2020-04-28 </span>
+              </li>
+              <li class="patent-item">
+                <span class="patent-number">US10482227B2</span> |
+                <a
+                  href="https://patents.google.com/patent/US10482227B2/en"
+                  class="patent-title"
+                  target="_blank"
+                  style="font-weight: bold"
+                  >Electroencephalography (EEG) based authentication
+                </a>
+                |
+                <span class="patent-meta">
+                  2019-11-19 |
+                  <a
+                    href="https://www.ipwatchdog.com/2019/12/27/high-profile-patents-2019/id=117362/"
+                    target="_blank"
+                    >IBM Most High-Profile Patents of 2019 (9262 in total)</a
+                  >
+                </span>
+              </li>
+              <li class="patent-item">
+                <span class="patent-number">US10185753B1</span> |
+                <a
+                  href="https://patents.google.com/patent/US10185753B1/en"
+                  class="patent-title"
+                  target="_blank"
+                  style="font-weight: bold"
+                  >Mining procedure dialogs from source content</a
+                >
+                |
+                <span class="patent-meta"> 2019-01-22 </span>
+              </li>
+              <li class="patent-item">
+                <span class="patent-number">US10171662B1</span> |
+                <a
+                  href="https://patents.google.com/patent/US10171662"
+                  class="patent-title"
+                  target="_blank"
+                  style="font-weight: bold"
+                  >Intervention in conversation between virtual agent and
+                  user</a
+                >
+                |
+                <span class="patent-meta"> 2019-01-01 </span>
+              </li>
+            </ul>
+          </div>
 
-         <li class="patent-item">
-          <span class="patent-number">CN110347858B</span> | 
-          <a href="https://patents.google.com/patent/CN110347858B/zh" class="patent-title" target="_blank" style="font-weight: bold;">一种图片的生成方法和相关装置</a> | 
-          <span class="patent-meta">
-            2023-10-24 | ZL201910641422.X
-          </span>
-        </li>
+          <!-- 中国专利组 -->
+          <div class="patent-group">
+            <h3 class="group-title">🇨🇳 Chinese Patents</h3>
+            <ul class="patent-list">
+              <li class="patent-item">
+                <span class="patent-number">CN112163560B</span> |
+                <a
+                  href="https://patents.google.com/patent/CN112163560A/zh"
+                  class="patent-title"
+                  target="_blank"
+                  style="font-weight: bold"
+                  >一种视频信息处理方法、装置、电子设备及存储介质</a
+                >
+                |
+                <span class="patent-meta"> 2024-03-05 | ZL202011141537.1 </span>
+              </li>
 
-           <li class="patent-item">
-          <span class="patent-number">CN111104511B</span> | 
-          <a href="https://patents.google.com/patent/CN111104511B/zh" class="patent-title" target="_blank" style="font-weight: bold;">一种提取热点话题的方法、装置及存储介质</a> | 
-          <span class="patent-meta">
-            2023-09-29 | ZL201911126826.1
-          </span>
-        </li>
+              <li class="patent-item">
+                <span class="patent-number">CN110347858B</span> |
+                <a
+                  href="https://patents.google.com/patent/CN110347858B/zh"
+                  class="patent-title"
+                  target="_blank"
+                  style="font-weight: bold"
+                  >一种图片的生成方法和相关装置</a
+                >
+                |
+                <span class="patent-meta"> 2023-10-24 | ZL201910641422.X </span>
+              </li>
 
-        <li class="patent-item">
-          <span class="patent-number">CN111311554B</span> | 
-          <a href="https://patents.google.com/patent/CN111311554B/zh" class="patent-title" target="_blank" style="font-weight: bold;">图文内容的内容质量确定方法、装置、设备及存储介质</a> | 
-          <span class="patent-meta">
-            2023-09-01 | ZL202010071020.3
-          </span>
-        </li>
-        <li class="patent-item">
-          <span class="patent-number">CN112015949B</span> | 
-          <a href="https://patents.google.com/patent/CN112015949B/zh" class="patent-title" target="_blank" style="font-weight: bold;">视频生成方法和装置、存储介质及电子设备</a> | 
-          <span class="patent-meta">
-            2023-08-29 | ZL202010873855.0
-          </span>
-        </li>
-        <li class="patent-item">
-          <span class="patent-number">CN110489663B</span> | 
-          <a href="#" class="patent-title" target="_blank" style="font-weight: bold;">一种社交内容控制方法、装置及计算机设备</a> | 
-          <span class="patent-meta">
-            2023-08-29 | ZL201910718216.4
-          </span>
-        </li>
+              <li class="patent-item">
+                <span class="patent-number">CN111104511B</span> |
+                <a
+                  href="https://patents.google.com/patent/CN111104511B/zh"
+                  class="patent-title"
+                  target="_blank"
+                  style="font-weight: bold"
+                  >一种提取热点话题的方法、装置及存储介质</a
+                >
+                |
+                <span class="patent-meta"> 2023-09-29 | ZL201911126826.1 </span>
+              </li>
 
-        <li class="patent-item">
-          <span class="patent-number">CN113518256B</span> | 
-          <a href="urlxxx" class="patent-title" target="_blank" style="font-weight: bold;">视频处理方法、装置、电子设备及计算机可读存储介质</a> | 
-          <span class="patent-meta">
-            2023-08-08 | ZL202110835849.0
-          </span>
-        </li>
+              <li class="patent-item">
+                <span class="patent-number">CN111311554B</span> |
+                <a
+                  href="https://patents.google.com/patent/CN111311554B/zh"
+                  class="patent-title"
+                  target="_blank"
+                  style="font-weight: bold"
+                  >图文内容的内容质量确定方法、装置、设备及存储介质</a
+                >
+                |
+                <span class="patent-meta"> 2023-09-01 | ZL202010071020.3 </span>
+              </li>
+              <li class="patent-item">
+                <span class="patent-number">CN112015949B</span> |
+                <a
+                  href="https://patents.google.com/patent/CN112015949B/zh"
+                  class="patent-title"
+                  target="_blank"
+                  style="font-weight: bold"
+                  >视频生成方法和装置、存储介质及电子设备</a
+                >
+                |
+                <span class="patent-meta"> 2023-08-29 | ZL202010873855.0 </span>
+              </li>
+              <li class="patent-item">
+                <span class="patent-number">CN110489663B</span> |
+                <a
+                  href="#"
+                  class="patent-title"
+                  target="_blank"
+                  style="font-weight: bold"
+                  >一种社交内容控制方法、装置及计算机设备</a
+                >
+                |
+                <span class="patent-meta"> 2023-08-29 | ZL201910718216.4 </span>
+              </li>
 
-         <li class="patent-item">
-          <span class="patent-number">CN110457699B</span> | 
-          <a href="https://patents.google.com/patent/CN110457699B/zh" class="patent-title" target="_blank" style="font-weight: bold;">一种停用词挖掘方法、装置、电子设备及存储介质</a> | 
-          <span class="patent-meta">
-            2023-07-04 | ZL201910721384.9
-          </span>
-        </li>
+              <li class="patent-item">
+                <span class="patent-number">CN113518256B</span> |
+                <a
+                  href="urlxxx"
+                  class="patent-title"
+                  target="_blank"
+                  style="font-weight: bold"
+                  >视频处理方法、装置、电子设备及计算机可读存储介质</a
+                >
+                |
+                <span class="patent-meta"> 2023-08-08 | ZL202110835849.0 </span>
+              </li>
 
-         <li class="patent-item">
-          <span class="patent-number">CN110458232B</span> | 
-          <a href="https://patents.google.com/patent/CN110458232B/zh" class="patent-title" target="_blank" style="font-weight: bold;">一种确定图像风格相似度的方法及设备</a> | 
-          <span class="patent-meta">
-            2023-05-30 | ZL201910743518.7
-          </span>
-        </li>
+              <li class="patent-item">
+                <span class="patent-number">CN110457699B</span> |
+                <a
+                  href="https://patents.google.com/patent/CN110457699B/zh"
+                  class="patent-title"
+                  target="_blank"
+                  style="font-weight: bold"
+                  >一种停用词挖掘方法、装置、电子设备及存储介质</a
+                >
+                |
+                <span class="patent-meta"> 2023-07-04 | ZL201910721384.9 </span>
+              </li>
 
-          <li class="patent-item">
-          <span class="patent-number">CN111291551B</span> | 
-          <a href="https://patents.google.com/patent/CN111291551B/zh" class="patent-title" target="_blank" style="font-weight: bold;">文本处理方法、装置、电子设备及计算机可读存储介质</a> | 
-          <span class="patent-meta">
-            2023-04-18 | ZL202010073135.6
-          </span>
-        </li>
+              <li class="patent-item">
+                <span class="patent-number">CN110458232B</span> |
+                <a
+                  href="https://patents.google.com/patent/CN110458232B/zh"
+                  class="patent-title"
+                  target="_blank"
+                  style="font-weight: bold"
+                  >一种确定图像风格相似度的方法及设备</a
+                >
+                |
+                <span class="patent-meta"> 2023-05-30 | ZL201910743518.7 </span>
+              </li>
 
-         <li class="patent-item">
-          <span class="patent-number">CN111368214B</span> | 
-          <a href="https://patents.google.com/patent/CN111368214B/zh" class="patent-title" target="_blank" style="font-weight: bold;">信息推荐方法、装置、计算机设备和存储介质</a> | 
-          <span class="patent-meta">
-            2023-03-21 | ZL202010149764.2
-          </span>
-        </li>
+              <li class="patent-item">
+                <span class="patent-number">CN111291551B</span> |
+                <a
+                  href="https://patents.google.com/patent/CN111291551B/zh"
+                  class="patent-title"
+                  target="_blank"
+                  style="font-weight: bold"
+                  >文本处理方法、装置、电子设备及计算机可读存储介质</a
+                >
+                |
+                <span class="patent-meta"> 2023-04-18 | ZL202010073135.6 </span>
+              </li>
 
-         <li class="patent-item">
-          <span class="patent-number">CN115512692B</span> | 
-          <a href="https://patents.google.com/patent/CN115512692B/zh" class="patent-title" target="_blank" style="font-weight: bold;">语音识别方法、装置、设备及存储介质</a> | 
-          <span class="patent-meta">
-            2023-02-28 | ZL202211373304.3
-          </span>
-        </li>
+              <li class="patent-item">
+                <span class="patent-number">CN111368214B</span> |
+                <a
+                  href="https://patents.google.com/patent/CN111368214B/zh"
+                  class="patent-title"
+                  target="_blank"
+                  style="font-weight: bold"
+                  >信息推荐方法、装置、计算机设备和存储介质</a
+                >
+                |
+                <span class="patent-meta"> 2023-03-21 | ZL202010149764.2 </span>
+              </li>
 
-        <li class="patent-item">
-          <span class="patent-number">CN115293132B</span> | 
-          <a href="https://patents.google.com/patent/CN115293132B/zh" class="patent-title" target="_blank" style="font-weight: bold;">虚拟场景的对话处理方法、装置、电子设备及存储介质</a> | 
-          <span class="patent-meta">
-            2022-12-30 | ZL202211207306.5
-          </span>
-        </li>
+              <li class="patent-item">
+                <span class="patent-number">CN115512692B</span> |
+                <a
+                  href="https://patents.google.com/patent/CN115512692B/zh"
+                  class="patent-title"
+                  target="_blank"
+                  style="font-weight: bold"
+                  >语音识别方法、装置、设备及存储介质</a
+                >
+                |
+                <span class="patent-meta"> 2023-02-28 | ZL202211373304.3 </span>
+              </li>
 
-        <li class="patent-item">
-          <span class="patent-number">CN110891201B</span> | 
-          <a href="#" class="patent-title" target="_blank" style="font-weight: bold;">文本生成方法、装置、服务器和存储介质</a> | 
-          <span class="patent-meta">
-            2022-11-01 | ZL201911080117.4
-          </span>
-        </li>
+              <li class="patent-item">
+                <span class="patent-number">CN115293132B</span> |
+                <a
+                  href="https://patents.google.com/patent/CN115293132B/zh"
+                  class="patent-title"
+                  target="_blank"
+                  style="font-weight: bold"
+                  >虚拟场景的对话处理方法、装置、电子设备及存储介质</a
+                >
+                |
+                <span class="patent-meta"> 2022-12-30 | ZL202211207306.5 </span>
+              </li>
 
-          <li class="patent-item">
-          <span class="patent-number">CN112423093B</span> | 
-          <a href="https://patents.google.com/patent/CN112423093B/zh" class="patent-title" target="_blank" style="font-weight: bold;">游戏视频生成方法、装置、服务器和存储介质</a> | 
-          <span class="patent-meta">
-            	2022-04-08 | ZL202011109828.2
-          </span>
-        </li>
+              <li class="patent-item">
+                <span class="patent-number">CN110891201B</span> |
+                <a
+                  href="#"
+                  class="patent-title"
+                  target="_blank"
+                  style="font-weight: bold"
+                  >文本生成方法、装置、服务器和存储介质</a
+                >
+                |
+                <span class="patent-meta"> 2022-11-01 | ZL201911080117.4 </span>
+              </li>
 
-        <li class="patent-item">
-          <span class="patent-number">CN110597395B</span> | 
-          <a href="#" class="patent-title" target="_blank" style="font-weight: bold;">对象交互控制方法和装置、存储介质及电子装置</a> | 
-          <span class="patent-meta">
-            	2021-02-12 | ZL201910889018.4
-          </span>
-        </li>
+              <li class="patent-item">
+                <span class="patent-number">CN112423093B</span> |
+                <a
+                  href="https://patents.google.com/patent/CN112423093B/zh"
+                  class="patent-title"
+                  target="_blank"
+                  style="font-weight: bold"
+                  >游戏视频生成方法、装置、服务器和存储介质</a
+                >
+                |
+                <span class="patent-meta"> 2022-04-08 | ZL202011109828.2 </span>
+              </li>
 
-        <li class="patent-item">
-          <span class="patent-number">CN111163359B</span> | 
-          <a href="https://patents.google.com/patent/CN111163359B/zh" class="patent-title" target="_blank" style="font-weight: bold;">弹幕生成方法、装置和计算机可读存储介质</a> | 
-          <span class="patent-meta">
-            2021-01-05 | ZL201911424409.5
-          </span>
-        </li>
+              <li class="patent-item">
+                <span class="patent-number">CN110597395B</span> |
+                <a
+                  href="#"
+                  class="patent-title"
+                  target="_blank"
+                  style="font-weight: bold"
+                  >对象交互控制方法和装置、存储介质及电子装置</a
+                >
+                |
+                <span class="patent-meta"> 2021-02-12 | ZL201910889018.4 </span>
+              </li>
 
-        <li class="patent-item">
-          <span class="patent-number">CN103885445B</span> | 
-          <a href="https://patents.google.com/patent/CN103885445B/zh" class="patent-title" target="_blank" style="font-weight: bold;">一种脑控动物机器人系统以及动物机器人的脑控方法</a> | 
-          <span class="patent-meta">
-            2016-05-11 | ZL201410105028.1
-          </span>
-        </li>
-        <li class="patent-item">
-          <span class="patent-number">CN103390193B</span> | 
-          <a href="https://patents.google.com/patent/CN103390193B/zh" class="patent-title" target="_blank" style="font-weight: bold;">一种面向导航的大鼠机器人自动训练装置以及大鼠行为识别方法和训练方法</a> | 
-          <span class="patent-meta">
-            2016-04-06 | ZL201310327334.5
-          </span>
-        </li>
-        <li class="patent-item">
-          <span class="patent-number">CN103461166B</span> | 
-          <a href="https://patents.google.com/patent/CN103461166B/zh" class="patent-title" target="_blank" style="font-weight: bold;">一种面向动物机器人控制训练的三臂迷宫装置及训练方法</a> | 
-          <span class="patent-meta">
-            2015-01-21 | ZL201310428285.4
-          </span>
-        </li>
-        <!-- <li class="patent-item">
+              <li class="patent-item">
+                <span class="patent-number">CN111163359B</span> |
+                <a
+                  href="https://patents.google.com/patent/CN111163359B/zh"
+                  class="patent-title"
+                  target="_blank"
+                  style="font-weight: bold"
+                  >弹幕生成方法、装置和计算机可读存储介质</a
+                >
+                |
+                <span class="patent-meta"> 2021-01-05 | ZL201911424409.5 </span>
+              </li>
+
+              <li class="patent-item">
+                <span class="patent-number">CN103885445B</span> |
+                <a
+                  href="https://patents.google.com/patent/CN103885445B/zh"
+                  class="patent-title"
+                  target="_blank"
+                  style="font-weight: bold"
+                  >一种脑控动物机器人系统以及动物机器人的脑控方法</a
+                >
+                |
+                <span class="patent-meta"> 2016-05-11 | ZL201410105028.1 </span>
+              </li>
+              <li class="patent-item">
+                <span class="patent-number">CN103390193B</span> |
+                <a
+                  href="https://patents.google.com/patent/CN103390193B/zh"
+                  class="patent-title"
+                  target="_blank"
+                  style="font-weight: bold"
+                  >一种面向导航的大鼠机器人自动训练装置以及大鼠行为识别方法和训练方法</a
+                >
+                |
+                <span class="patent-meta"> 2016-04-06 | ZL201310327334.5 </span>
+              </li>
+              <li class="patent-item">
+                <span class="patent-number">CN103461166B</span> |
+                <a
+                  href="https://patents.google.com/patent/CN103461166B/zh"
+                  class="patent-title"
+                  target="_blank"
+                  style="font-weight: bold"
+                  >一种面向动物机器人控制训练的三臂迷宫装置及训练方法</a
+                >
+                |
+                <span class="patent-meta"> 2015-01-21 | ZL201310428285.4 </span>
+              </li>
+              <!-- <li class="patent-item">
           <span class="patent-number">cxxx</span> | 
           <a href="urlxxx" class="patent-title" target="_blank" style="font-weight: bold;">titlexxx</a> | 
           <span class="patent-meta">
             202xxxx | ZLxxx
           </span>
         </li> -->
+            </ul>
+          </div>
+        </div>
+      </section>
 
-      </ul>
-    </div>
-
-  </div>
-</section>
-
-<section id="stats" class="stats-section">
-     <div class="container">
-      <div class="visitor-map-wrapper">
-        <h2 class="visitor-map-title">Statistics</h2>
-        <!-- <p>
+      <section id="stats" class="stats-section">
+        <div class="container">
+          <div class="visitor-map-wrapper">
+            <h2 class="visitor-map-title">Statistics</h2>
+            <!-- <p>
          <span id="busuanzi_container_site_uv">
             👥 Visitors: <strong id="busuanzi_value_site_uv">--</strong>
           </span>
@@ -968,113 +1446,154 @@
           👁️ Page Views: <strong id="busuanzi_value_site_pv">--</strong>
         </span>
         </p> -->
-        <p>
-  <!-- 不蒜子：统计总 UV 和总 PV -->
-  <span id="busuanzi_container_site_uv">
-    👥 Visitors: <strong id="busuanzi_value_site_uv">--</strong>
-  </span>
-  &nbsp;|&nbsp;
-  <span id="busuanzi_container_site_pv">
-    👁️ Page Views: <strong id="busuanzi_value_site_pv">--</strong>
-  </span>
+            <p>
+              <!-- 不蒜子：统计总 UV 和总 PV -->
+              <span id="busuanzi_container_site_uv">
+                👥 Visitors: <strong id="busuanzi_value_site_uv">--</strong>
+              </span>
+              &nbsp;|&nbsp;
+              <span id="busuanzi_container_site_pv">
+                👁️ Page Views: <strong id="busuanzi_value_site_pv">--</strong>
+              </span>
 
-  <br> <!-- 换行，保持整齐 -->
+              <br />
+              <!-- 换行，保持整齐 -->
 
-  <!-- 51.la：统计今日、昨日、在线 -->
-  <span>
-    📅 Today: <strong id="la_today_pv">--</strong>
-  </span>
-  &nbsp;|&nbsp;
-  <span>
-    ⌛ Yesterday: <strong id="la_yesterday_pv">--</strong>
-  </span>
-  &nbsp;|&nbsp;
-  <span>
-    🟢 Online: <strong id="la_online_pv">--</strong>
-  </span>
-</p>
+              <!-- 51.la：统计今日、昨日、在线 -->
+              <span> 📅 Today: <strong id="la_today_pv">--</strong> </span>
+              &nbsp;|&nbsp;
+              <span>
+                ⌛ Yesterday: <strong id="la_yesterday_pv">--</strong>
+              </span>
+              &nbsp;|&nbsp;
+              <span> 🟢 Online: <strong id="la_online_pv">--</strong> </span>
+            </p>
 
-<!-- 隐藏官方挂件本身的显示，我们只要它的数据 -->
-<div style="display:none">
-  <script id="LA-DATA-WIDGET" crossorigin="anonymous" charset="UTF-8" src="https://v6-widget.51.la/v6/3PfG0w48WMF7LJHN/quote.js?theme=0&col=true&f=12&display=0,0,1,1,1,1,1,1"></script>
-</div>
-<script>
-  // 等待 51.la 的挂件脚本加载并执行
-  var checkLaData = setInterval(function() {
-    // 官方挂件会生成一些特定的元素，我们从中提取数字
-    // 51.la 挂件渲染后，数据通常在 id 为 LA-DATA-WIDGET 的相邻元素中
-    try {
-      var widgetContainer = document.getElementById('LA-DATA-WIDGET').parentNode;
-      if (widgetContainer) {
-        // 尝试通过 fetch 直接获取纯净数据（更可靠的方法）
-        fetch('https://v6-widget.51.la/v6/3PfG0w48WMF7LJHN/quote.js')
-          .then(res => res.text())
-          .then(text => {
-            // 正则解析：今日PV, 昨日PV, 在线人数
-            // 51.la quote.js 内部数据的顺序通常是固定的
-            var matches = text.match(/\d+/g);
-            if (matches && matches.length >= 7) {
-              document.getElementById('la_today_pv').innerText = matches[1];     // 今日PV
-              document.getElementById('la_yesterday_pv').innerText = matches[3]; // 昨日PV
-              document.getElementById('la_online_pv').innerText = matches[6];    // 在线人数
-              clearInterval(checkLaData); // 成功获取后停止定时器
-            }
-          });
-      }
-    } catch (e) {
-      console.error("51.la 数据解析失败");
-    }
-  }, 1000); // 每秒检查一次，直到数据加载出来
-</script>
+            <!-- 隐藏官方挂件本身的显示，我们只要它的数据 -->
+            <div style="display: none">
+              <script
+                id="LA-DATA-WIDGET"
+                crossorigin="anonymous"
+                charset="UTF-8"
+                src="https://v6-widget.51.la/v6/3PfG0w48WMF7LJHN/quote.js?theme=0&col=true&f=12&display=0,0,1,1,1,1,1,1"
+              ></script>
+            </div>
+            <script>
+              // Tab 切换功能
+              function switchTab(tabName) {
+                // 移除所有 active 类
+                document
+                  .querySelectorAll(".tab-btn")
+                  .forEach((btn) => btn.classList.remove("active"));
+                document
+                  .querySelectorAll(".tab-content")
+                  .forEach((content) => content.classList.remove("active"));
 
+                // 添加 active 类到当前 tab
+                event.target.classList.add("active");
+                document
+                  .getElementById("tab-" + tabName)
+                  .classList.add("active");
+              }
 
-        
-        <div class="visitor-map-content">
-          <span style="display:inline-block; width:600px; height:320px; max-width: 100%; overflow:hidden; vertical-align:middle;">
-          <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=PKu-j1ruGcY5Ih8QMbX77_4usfTRncuS7rUZkrqTOms&cl=ffffff&w=a"></script>
-          </span>
+              // 等待 51.la 的挂件脚本加载并执行
+              var checkLaData = setInterval(function () {
+                // 官方挂件会生成一些特定的元素，我们从中提取数字
+                // 51.la 挂件渲染后，数据通常在 id 为 LA-DATA-WIDGET 的相邻元素中
+                try {
+                  var widgetContainer =
+                    document.getElementById("LA-DATA-WIDGET").parentNode;
+                  if (widgetContainer) {
+                    // 尝试通过 fetch 直接获取纯净数据（更可靠的方法）
+                    fetch(
+                      "https://v6-widget.51.la/v6/3PfG0w48WMF7LJHN/quote.js",
+                    )
+                      .then((res) => res.text())
+                      .then((text) => {
+                        // 正则解析：今日PV, 昨日PV, 在线人数
+                        // 51.la quote.js 内部数据的顺序通常是固定的
+                        var matches = text.match(/\d+/g);
+                        if (matches && matches.length >= 7) {
+                          document.getElementById("la_today_pv").innerText =
+                            matches[1]; // 今日PV
+                          document.getElementById("la_yesterday_pv").innerText =
+                            matches[3]; // 昨日PV
+                          document.getElementById("la_online_pv").innerText =
+                            matches[6]; // 在线人数
+                          clearInterval(checkLaData); // 成功获取后停止定时器
+                        }
+                      });
+                  }
+                } catch (e) {
+                  console.error("51.la 数据解析失败");
+                }
+              }, 1000); // 每秒检查一次，直到数据加载出来
+            </script>
+
+            <div class="visitor-map-content">
+              <span
+                style="
+                  display: inline-block;
+                  width: 600px;
+                  height: 320px;
+                  max-width: 100%;
+                  overflow: hidden;
+                  vertical-align: middle;
+                "
+              >
+                <script
+                  type="text/javascript"
+                  id="clustrmaps"
+                  src="//clustrmaps.com/map_v2.js?d=PKu-j1ruGcY5Ih8QMbX77_4usfTRncuS7rUZkrqTOms&cl=ffffff&w=a"
+                ></script>
+              </span>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-</section>
-      
+      </section>
+
       <div class="footer">
-        <p>© 2026 Yipeng Yu. Last updated: Feb 2026 |
-          <a href="#" onclick="javascript:window.print();"> Print</a> | 
+        <p>
+          © 2026 Yipeng Yu. Last updated: Feb 2026 |
+          <a href="#" onclick="javascript: window.print();"> Print</a> |
           <a href="#top">To top <i class="icon-arrow-up"></i></a>
         </p>
-        
-</div>
+      </div>
 
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      <script
+        async
+        src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+      ></script>
     </div>
 
     <script>
       // Mobile menu toggle functionality
-      document.getElementById('mobileMenuBtn').addEventListener('click', function() {
-        document.getElementById('navLinks').classList.toggle('show');
-      });
-      
+      document
+        .getElementById("mobileMenuBtn")
+        .addEventListener("click", function () {
+          document.getElementById("navLinks").classList.toggle("show");
+        });
+
       // Close mobile menu when clicking on a link
-      document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', function() {
-          document.getElementById('navLinks').classList.remove('show');
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", function () {
+          document.getElementById("navLinks").classList.remove("show");
         });
       });
-      
+
       // Smooth scrolling for navigation links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
           e.preventDefault();
-          
-          const targetId = this.getAttribute('href');
-          if (targetId === '#') return;
-          
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
           const targetElement = document.querySelector(targetId);
           if (targetElement) {
             window.scrollTo({
               top: targetElement.offsetTop - 80,
-              behavior: 'smooth'
+              behavior: "smooth",
             });
           }
         });
