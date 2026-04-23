@@ -251,7 +251,11 @@
                         .research-content {
                           flex: 1;
                         }
-
+                        .research-content p::before,
+                        .research-content p::after {
+                          content: none !important;
+                          display: none !important;
+                        }
                         .paper-title {
                           font-family: 'Lora', serif;
                           font-size: 1.3rem;
@@ -732,7 +736,7 @@
               <div class="publication">
                 WWW, Short, Proceedings of the ACM Web Conference 2026
               </div>
-              <p>
+              <p style="position: relative">
                 In this work, we extend KGED to a four-class classification task
                 to identify which element is incorrect or whether the triple is
                 correct. Directly adapting existing LLM-based methods to this
@@ -863,7 +867,7 @@
                 AAAI 2025, The 39th Annual AAAI Conference on Artificial
                 Intelligence
               </div>
-              <p>
+              <p style="position: relative">
                 In this work we investigate the relevance of different positions
                 of the latent image features to the target object in diffusion
                 model, and accordingly propose a weighted-merge method to merge
@@ -952,7 +956,7 @@
                 ACM MM 2021, Proceedings of the 29th ACM International
                 Conference on Multimedia
               </div>
-              <p>
+              <p style="position: relative">
                 We present Text2Video, a novel system to automatically produce
                 videos using only text-editing for novice users. Given an input
                 text script, the director-like system can generate game-related
