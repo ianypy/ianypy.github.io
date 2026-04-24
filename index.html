@@ -710,6 +710,109 @@
 
           <div class="research-item">
             <div class="research-image">
+              <img src="images/type.png" alt="TaoType" />
+            </div>
+            <div class="research-content">
+              <a href="#" target="_blank">
+                <div class="paper-title">
+                  TaoType: Predicting Fine-Grained Typing Intent for Faster
+                  Search
+                </div>
+              </a>
+              <div class="authors">
+                <span class="author-highlight">Yipeng Yu<sup>*</sup></span>,
+                <a>Yichen Yuan</a>, <a></a>Chengxiao Feng</a>, <a>Xu Liu</a>
+              </div>
+              <div class="publication">
+                ACL 2026, The 64th Annual Meeting of the Association for
+                Computational Linguistics
+              </div>
+              <p>
+                Is the user’s current query input exactly what they intend to
+                search for?" Our work aims to answer this question by
+                determining, at each typing, whether the current query is
+                complete. If so, a search is implicitly triggered in advance
+                without waiting for user confirmation. This approach reduces
+                response time and enhances the user search experience.
+                Specifically, we propose TaoType, a client-side framework that
+                introduces innovation in data sampling, feature selection, model
+                design and training, and online strategy. Experiments in a
+                leading mobile shopping application named Taobao validate its
+                effectiveness, achieving offline precision/recall/accuracy of
+                0.7936/0.8196/0.7742, respectively, and decreasing online
+                response time by 640.51±93.65 milliseconds, which is of great
+                benefit to the search system. To the best of our knowledge,
+                our work is the first to identify and address this problem. This
+                work also introduces App Intelligence, a new paradigm for
+                enhancing mobile applications by integrating on-device AI to
+                boost business value and user experience.
+              </p>
+            </div>
+          </div>
+
+          <div class="research-item">
+            <div class="research-image">
+              <img src="images/recgpt.png" alt="RecGPT" />
+            </div>
+            <div class="research-content">
+              <a href="#" target="_blank">
+                <div class="paper-title">
+                  RecGPT-Mobile: On-Device Large Language Models for User Intent Understanding in Taobao Feed Recommendation
+                </div>
+              </a>
+              <div class="authors">
+                <a>Bin Zhang</a>, <a>Weipeng Huang</a>, <a>Dimin Wang</a>, <a>Jialin Zhu</a>, <a>Yuning Jiang</a>, <a>Zhaode Wang</a>, <a>Chengfei Lv</a>, 
+                <a>Jian Wang</a>, <a>Qichao Ma</a>, <a>Li Chen</a>, <a>Junqing Wu</a>, <span class="author-highlight">Yipeng Yu</span>
+
+              </div>
+              <div class="publication">
+                SIGIR 2026, The 49th International ACM SIGIR Conference on Research and Development in Information Retrieval
+              </div>
+              <p>
+                In this paper, we propose RecGPT-Mobile, a framework that designs a lightweight LLM-based intent understanding agent to improve recommendation quality 
+                in mobile e-commerce scenarios. By deploying LLM directly on mobile devices, our approach can capture the evolving interests of users more quickly 
+                and adjust the recommendation results in real time. Extensive offline analyzes and online experiments demonstrate that 
+                our method significantly improves the accuracy of recommendation results, laying a practical path for LLM deployment in production-scale recommendation systems on mobile devices, 
+                as well as a scalable solution for integrating LLMs into real-world next-query prediction systems.
+              </p>
+            </div>
+          </div>
+
+          <div class="research-item">
+            <div class="research-image">
+              <img src="images/d2c.png" alt="D2C" />
+            </div>
+            <div class="research-content">
+              <a href="https://arxiv.org/abs/2602.18548" target="_blank">
+                <div class="paper-title">
+                  1D-Bench: A Benchmark for Iterative UI Code Generation with Visual Feedback in Real-World
+                </div>
+              </a>
+              <div class="authors">
+                <a>Qiao Xu<sup>#</sup></a>, <span class="author-highlight">Yipeng Yu<sup>#</sup><sup>*</sup></span>
+
+              </div>
+              <div class="publication">
+                arXiv:2602.18548 
+              </div>
+              <p>
+                We introduce 1D-Bench, a benchmark grounded in real e-commerce workflows, where each instance provides a reference rendering 
+                and an exported intermediate representation that may contain extraction errors. 1D is short for one day, representing 
+                the efficient completion of design-to-code tasks in less than one day. Models take both as input, using the intermediate 
+                representation as structural cues while being evaluated against the reference rendering, which tests robustness to intermediate 
+                representation defects rather than literal adherence. 1D-Bench requires generating an executable React codebase under 
+                a fixed toolchain with an explicit component hierarchy, and defines a multi-round setting in which models iteratively 
+                apply component-level edits using execution feedback. 
+                Experiments on commercial and open-weight multimodal models show that iterative editing generally improves final 
+                performance by increasing rendering success and often improving visual similarity. We further conduct 
+                a pilot study on post-training with synthetic repair trajectories and reinforcement learning based editing, 
+                and observe limited and unstable gains that may stem from sparse terminal rewards and high-variance file-level updates.
+              </p>
+            </div>
+          </div>
+
+          <div class="research-item">
+            <div class="research-image">
               <img src="images/www26.png" alt="Topology" />
             </div>
             <div class="research-content">
