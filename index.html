@@ -580,6 +580,15 @@
               color: #1d252c;
               font-weight: 800;
             }
+
+            /* Some contribution marks sit immediately after the bold name. */
+            #tab-all .allpaper-meta b + sup,
+            #tab-all .allpaper-meta b + sup + sup,
+            #tab-topic .allpaper-meta b + sup,
+            #tab-topic .allpaper-meta b + sup + sup {
+              color: #1d252c;
+              font-weight: 800;
+            }
             /* ===== By Topic tab ===== */
       .topic-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
       .topic-nav a {
@@ -796,7 +805,7 @@
                 </div>
               </a>
               <div class="authors">
-                <span class="author-highlight">Yipeng Yu</span>
+                <span class="author-highlight">Yipeng Yu<sup>*</sup></span>
               </div>
               <div class="publication">arXiv, 2026</div>
               <p>
@@ -1423,7 +1432,7 @@
                 AI to AI for Science
               </a>
               |
-              <span class="allpaper-meta"> <b>Yipeng Yu</b> | 2026-03-30 </span>
+              <span class="allpaper-meta"> <b>Yipeng Yu<sup>*</sup></b> | 2026-03-30 </span>
             </li>
 
             <li class="allpaper-item">
@@ -1907,7 +1916,7 @@
                 >
                 |
                 <span class="allpaper-meta">
-                  <b>Yipeng Yu</b> | 2026-03-30
+                  <b>Yipeng Yu<sup>*</sup></b> | 2026-03-30
                 </span>
               </li>
             </ul>
