@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Yipeng Yu (俞一鹏) — AI Researcher</title>
     <meta
       name="description"
@@ -637,6 +637,82 @@
         #career table, #career tbody, #career tr, #career td { display: block; width: 100%; }
         #career td { padding: 4px 0; }
       }
+
+      /* Responsive refinements for phones and tablets. */
+      img { max-width: 100%; }
+      .research-content, .patent-item, .allpaper-item { overflow-wrap: anywhere; }
+
+      @media (max-width: 900px) {
+        html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+        body {
+          max-width: none;
+          padding: 0;
+          font-size: 1rem;
+          padding-bottom: env(safe-area-inset-bottom);
+        }
+        nav {
+          top: env(safe-area-inset-top);
+          margin: 0;
+          border-radius: 0;
+          padding: 10px 0;
+        }
+        .nav-container { padding: 0 16px; }
+        .logo { font-size: 1.2rem; }
+        .container {
+          padding: 24px 18px;
+          box-shadow: none;
+          border-radius: 0;
+        }
+        .mobile-menu-btn {
+          width: 44px;
+          height: 44px;
+          display: grid;
+          place-items: center;
+          border-radius: 8px;
+        }
+        .mobile-menu-btn:hover, .mobile-menu-btn:focus-visible {
+          background-color: rgba(255, 255, 255, 0.16);
+        }
+        .mobile-menu-btn svg { width: 24px; height: 24px; stroke: currentColor; }
+        .nav-links {
+          padding: 12px 16px 16px;
+          gap: 4px;
+          border-radius: 0 0 10px 10px;
+        }
+        .nav-links a { min-height: 44px; display: flex; align-items: center; padding: 10px 12px; }
+        .header-content { gap: 24px; margin-top: 8px; }
+        .profile-image { width: 180px; height: 180px; margin-bottom: 0; }
+        h1 { font-size: clamp(1.9rem, 7vw, 2.35rem); margin-bottom: 14px; }
+        h2 { font-size: clamp(1.5rem, 5.5vw, 1.8rem); margin-top: 28px; }
+        .bio p { line-height: 1.72; }
+        .contact-info { margin-left: auto; margin-right: auto; }
+        .social-links { flex-wrap: wrap; justify-content: center; gap: 9px; }
+        .social-links a { min-height: 42px; padding: 8px 13px; }
+        .research-item { width: 100%; gap: 16px; margin-bottom: 30px; padding-bottom: 24px; }
+        .research-image { margin-bottom: 0; }
+        .paper-tabs, .ip-tabs { scrollbar-width: none; }
+        .paper-tabs::-webkit-scrollbar, .ip-tabs::-webkit-scrollbar { display: none; }
+        .tab-btn, .ip-tab-btn { min-height: 42px; }
+        .visitor-map-wrapper img { height: auto; }
+        .footer { margin-top: 32px; padding: 22px 8px 0; }
+      }
+
+      @media (max-width: 480px) {
+        .container { padding: 20px 14px; }
+        .profile-image { width: 150px; height: 150px; }
+        .social-links a { flex: 1 1 calc(50% - 9px); justify-content: center; }
+        .research-image { max-width: 100%; }
+        .paper-tabs, .ip-tabs { margin-left: -2px; margin-right: -2px; }
+        .tab-btn { padding-left: 16px; padding-right: 16px; }
+        .ip-tab-btn { padding-left: 14px; padding-right: 14px; }
+        .topic-nav a { min-height: 36px; display: inline-flex; align-items: center; }
+        .allpaper-item, .patent-item { line-height: 1.7; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        *, *::before, *::after { transition-duration: 0.01ms !important; }
+      }
     </style>
   </head>
 
@@ -644,8 +720,8 @@
     <nav>
       <div class="nav-container">
         <a href="#" class="logo">Yipeng Yu</a>
-        <button class="mobile-menu-btn" id="mobileMenuBtn">
-          <i class="fas fa-bars"></i>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Open navigation menu" aria-controls="navLinks" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
         </button>
         <div class="nav-links" id="navLinks">
           <a href="#about">About</a>
@@ -3170,16 +3246,21 @@
 
     <script>
       // Mobile menu toggle functionality
-      document
-        .getElementById("mobileMenuBtn")
-        .addEventListener("click", function () {
-          document.getElementById("navLinks").classList.toggle("show");
-        });
+      const mobileMenuButton = document.getElementById("mobileMenuBtn");
+      const navLinks = document.getElementById("navLinks");
+
+      mobileMenuButton.addEventListener("click", function () {
+        const isOpen = navLinks.classList.toggle("show");
+        mobileMenuButton.setAttribute("aria-expanded", String(isOpen));
+        mobileMenuButton.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+      });
 
       // Close mobile menu when clicking on a link
       document.querySelectorAll(".nav-links a").forEach((link) => {
         link.addEventListener("click", function () {
-          document.getElementById("navLinks").classList.remove("show");
+          navLinks.classList.remove("show");
+          mobileMenuButton.setAttribute("aria-expanded", "false");
+          mobileMenuButton.setAttribute("aria-label", "Open navigation menu");
         });
       });
 
