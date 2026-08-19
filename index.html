@@ -9,14 +9,7 @@
       content="Yipeng Yu (俞一鹏), AI Researcher at Alibaba, GenAI & Agentic AI, Ph.D. Zhejiang University."
     />
 
-    <!-- 关键资源预连接：DNS+TCP+TLS提前建立，减少后面请求延迟 -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="image" href="images/ian.png" fetchpriority="high" />
-
-    <!-- 关键资源预连接：DNS+TCP+TLS提前建立，减少后面请求延迟 -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Load the above-the-fold portrait immediately; lower-page media is lazy-loaded. -->
     <link rel="preload" as="image" href="images/ian.png" fetchpriority="high" />
 
     <style>
@@ -598,18 +591,37 @@
         font-size: 0.93rem; font-weight: 600; color: #4a5a6a;
         margin: 14px 0 6px; padding-left: 8px; border-left: 3px solid #3498db;
       }
+
+      html { scroll-behavior: smooth; }
+      section { scroll-margin-top: 82px; }
+
+      .research-item { content-visibility: auto; contain-intrinsic-size: auto 440px; }
+
+      #career table { border-collapse: collapse; }
+      #career td { padding: 8px 12px 8px 0; vertical-align: top; }
+      #career tr + tr { border-top: 1px solid var(--border-color); }
+
+      .patent-group { margin: 24px 0 30px; }
+      .group-title {
+        color: var(--primary-color);
+        font-family: 'Lora', serif;
+        font-size: 1.15rem;
+        margin: 0 0 10px;
+      }
+      .patent-list { list-style: none; padding: 0; }
+      .patent-item { margin: 0 0 11px; line-height: 1.65; }
+      .patent-number { color: var(--secondary-color); font-weight: 600; }
+      .patent-meta { color: #777; font-size: 0.94em; }
+
+      @media (max-width: 600px) {
+        body { padding: 10px; }
+        .container { padding: 20px 14px; }
+        .paper-tabs, .ip-tabs { flex-wrap: nowrap; overflow-x: auto; }
+        .tab-btn, .ip-tab-btn { white-space: nowrap; }
+        #career table, #career tbody, #career tr, #career td { display: block; width: 100%; }
+        #career td { padding: 4px 0; }
+      }
     </style>
-
-    <link
-      rel="stylesheet"
-      href="style.min.css"
-      media="print"
-      onload="this.media = 'all'"
-    />
-    <noscript><link rel="stylesheet" href="style.min.css" /></noscript>
-
-    <!-- 图标：不要整包引入 Font Awesome，只引子集，见下 -->
-    <link rel="stylesheet" href="icons.min.css" />
   </head>
 
   <body id="top">
@@ -764,7 +776,7 @@
         <div id="tab-highlight" class="tab-content active">
           <div class="research-item">
             <div class="research-image">
-              <img
+              <img loading="lazy" decoding="async"
                 src="images/search-review-research.png"
                 alt="Deep Research"
               />
@@ -796,7 +808,7 @@
 
           <div class="research-item">
             <div class="research-image">
-              <img src="images/DREAM.png" alt="DREAM" />
+              <img loading="lazy" decoding="async" src="images/DREAM.png" alt="DREAM" />
             </div>
             <div class="research-content">
               <a href="https://arxiv.org/abs/2608.09408" target="_blank">
@@ -833,7 +845,7 @@
 
           <div class="research-item">
             <div class="research-image">
-              <img src="images/type.png" alt="TaoType" />
+              <img loading="lazy" decoding="async" src="images/type.png" alt="TaoType" />
             </div>
             <div class="research-content">
               <a
@@ -874,7 +886,7 @@
 
           <div class="research-item">
             <div class="research-image">
-              <img src="images/recgpt.png" alt="RecGPT" />
+              <img loading="lazy" decoding="async" src="images/recgpt.png" alt="RecGPT" />
             </div>
             <div class="research-content">
               <a
@@ -916,7 +928,7 @@
 
           <div class="research-item">
             <div class="research-image">
-              <img src="images/d2c.png" alt="D2C" />
+              <img loading="lazy" decoding="async" src="images/d2c.png" alt="D2C" />
             </div>
             <div class="research-content">
               <a href="https://arxiv.org/abs/2602.18548" target="_blank">
@@ -960,7 +972,7 @@
 
           <div class="research-item">
             <div class="research-image">
-              <img src="images/www26.png" alt="Topology" />
+              <img loading="lazy" decoding="async" src="images/www26.png" alt="Topology" />
             </div>
             <div class="research-content">
               <a
@@ -1004,7 +1016,7 @@
 
           <div class="research-item">
             <div class="research-image">
-              <img src="images/doc.png" alt="Document" />
+              <img loading="lazy" decoding="async" src="images/doc.png" alt="Document" />
             </div>
             <div class="research-content">
               <a
@@ -1048,7 +1060,7 @@
 
           <div class="research-item">
             <div class="research-image">
-              <img src="images/edge.png" alt="Behavioral Cues" />
+              <img loading="lazy" decoding="async" src="images/edge.png" alt="Behavioral Cues" />
             </div>
             <div class="research-content">
               <a
@@ -1089,7 +1101,7 @@
 
           <div class="research-item">
             <div class="research-image">
-              <img src="images/condition.png" alt="Condition" />
+              <img loading="lazy" decoding="async" src="images/condition.png" alt="Condition" />
             </div>
             <div class="research-content">
               <a
@@ -1132,7 +1144,7 @@
 
           <div class="research-item">
             <div class="research-image">
-              <img src="images/videomaster.png" alt="VideoMaster" />
+              <img loading="lazy" decoding="async" src="images/videomaster.png" alt="VideoMaster" />
             </div>
             <div class="research-content">
               <a
@@ -1175,7 +1187,7 @@
 
           <div class="research-item">
             <div class="research-image">
-              <img src="images/text2video.png" alt="Text2Video" />
+              <img loading="lazy" decoding="async" src="images/text2video.png" alt="Text2Video" />
             </div>
             <div class="research-content">
               <a
@@ -1219,7 +1231,7 @@
 
           <div class="research-item">
             <div class="research-image">
-              <img src="images/ratcyborg.jpg" alt="ratbot" />
+              <img loading="lazy" decoding="async" src="images/ratcyborg.jpg" alt="ratbot" />
             </div>
             <div class="research-content">
               <a
@@ -2992,7 +3004,7 @@
           </div>
           <!-- 标准 -->
           <div class="patent-group" data-ip-category="standard">
-            <h3 class="group-title">🇨🇳 AI standard</h3>
+            <h3 class="group-title">🇨🇳 AI Standard</h3>
             <ul class="patent-list">
               <li class="patent-item">
                 <span class="patent-number">DB11/T 2520-2026</span>
